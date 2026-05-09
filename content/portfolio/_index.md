@@ -1,8 +1,6 @@
 ---
-title: "ポートフォリオ"
+title: "Works"
+layout: portfolio
+description: "A collection of my projects and works"
 ---
 
-{{< gallery >}}
-  <img src="gallery/NFC_name.jpg" class="grid-w33" />
-  <img src="gallery/monkey_hunting.png" class="grid-w33" />
-{{< /gallery >}}

@@ -73,3 +73,9 @@
 <section>
     {{ partial "recent-articles/main.html" . }}
 </section>
+{{ $extra := site.GetPage "home-extra" }}
+{{ with $extra }}
+<section class="mx-auto max-w-4xl px-6 py-16 prose dark:prose-invert">
+    {{ .Content }}
+</section>
+{{ end }}

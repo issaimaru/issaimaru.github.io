@@ -21,7 +21,7 @@ disableImageOptimization = false
 disableTextInHeader = false
 # backgroundImageWidth = 1200
 
-defaultBackgroundImage = "/img/ripples.svg" # used as default for background images 
+defaultBackgroundImage = "/img/traffic.svg" # used as default for background images 
 #highlightCurrentMenuArea = true
 #smartTOC = true
 #smartTOCHideUnfocusedChildren = false
@@ -44,8 +44,8 @@ smartTOCHideUnfocusedChildren = false
   showScrollToTop = true
 
 [homepage]
-  layout = "background" # valid options: page, profile, hero, card, background, custom
-  homepageImage = "img/ripples.svg" # used in: hero, and card
+  layout = "hero" # valid options: page, profile, hero, card, background, custom
+  homepageImage = "img/rain.svg" # used in: hero, and card
   showRecent = false
   showRecentItems = 2
   showMoreLink = false

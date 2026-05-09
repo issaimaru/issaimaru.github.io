@@ -11,18 +11,13 @@
 # ordered by weight from lowest to highest.
 
 [[main]]
-    name = "ブログ"
-    pageRef = "posts"
-    weight = 10
-
-[[main]]
-    name = "自作ツール"
-    pageRef = "tools"
-    weight = 10
-
-[[main]]
-    name = "ポートフォリオ"
+    name = "Works"
     pageRef = "portfolio"
+    weight = 10
+
+[[main]]
+    name = "Posts"
+    pageRef = "posts"
     weight = 10
 
 # -- Footer Menu --

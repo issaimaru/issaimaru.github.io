@@ -13,7 +13,7 @@ body button {
 
 /* Scale SVG icons to text size */
 .icon svg {
-  @apply h-[1em] w-[1em];
+  @apply h-[1em] w-[1em] max-w-full;
 }
 
 /* Scale SVG logos to appropriate size */
