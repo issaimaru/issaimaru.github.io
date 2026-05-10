@@ -10,7 +10,7 @@ on:
     - assets/**
     - config/**
     - content/**
-    - obsidian/**
+    - static/**
 
   workflow_dispatch:
 
