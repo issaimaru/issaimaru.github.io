@@ -17,7 +17,7 @@ title = "Issei Takeuchi's Portfolio"
 
 [params.author]
 name = "Issei Takeuchi"
-email = "takeuchi.i.5b78@m.isct.ac.jp"
+email = "mailto:takeuchi.i.5b78@m.isct.ac.jp"
 image = "img/avatar-icon.jpg"
 imageQuality = 96
 headline = ""
@@ -48,7 +48,7 @@ links = [
 #     { mastodon = "https://mastodon.instance/@username" },
 #     { medium = "https://medium.com/username" },
 #     { microsoft = "https://www.microsoft.com/" },
-    { email = "takeuchi.i.5b78@m.isct.ac.jp" },
+    { email = "mailto:takeuchi.i.5b78@m.isct.ac.jp" },
     { x-twitter = "https://x.com/issaimaru" },
     { note = "https://note.com/issaimaru" },
 #     { orcid = "https://orcid.org/userid" },
