@@ -10,6 +10,9 @@ on:
     - assets/**
     - config/**
     - content/**
+    - obsidian/**
+
+  workflow_dispatch:
 
 jobs:
   deploy-portfolio:
