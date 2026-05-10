@@ -6,6 +6,12 @@
       <description>Last 10 notes on Quartz 4</description>
       <generator>Quartz -- quartz.jzhao.xyz</generator>
       <item>
+    <title>ninvadersの高速化</title>
+    <link>https://issaimaru.github.io/obsidian/ninvaders%E3%81%AE%E9%AB%98%E9%80%9F%E5%8C%96</link>
+    <guid>https://issaimaru.github.io/obsidian/ninvaders%E3%81%AE%E9%AB%98%E9%80%9F%E5%8C%96</guid>
+    <description><![CDATA[ ninvadersの初期状態で実行したときの動作 UARTのボーレートを変更 デフォルトの画面サイズで50FPSを出すとき，全画面が更新されると仮定して(実際は差分なのでもう少し小さい) 24 \times 80 =1920文字 1920 \times 8 \times 50 = 768[kbit/s] なので，115200bpsでは遅すぎる．なので1000000bpsに変更して実験を行った ・エイリアンはぬるぬる動くようになった ・入力は依然として受け付けない 画面表示処理の軽量化 フレーム更新ごとにrefreshScreen()関数を呼んでいたのを，画面更新処理が必要な時のみ呼ぶように変更... ]]></description>
+    <pubDate>Sun, 10 May 2026 05:33:12 GMT</pubDate>
+  </item><item>
     <title>Welcome to Quartz</title>
     <link>https://issaimaru.github.io/obsidian/</link>
     <guid>https://issaimaru.github.io/obsidian/</guid>
