@@ -6,29 +6,29 @@
       <description>Last 10 notes on Issei Takeuchi&#039;s Obsidian Pages</description>
       <generator>Quartz -- quartz.jzhao.xyz</generator>
       <item>
-    <title>Welcome to My Digital Garden</title>
-    <link>https://issaimaru.github.io/obsidian/</link>
-    <guid>https://issaimaru.github.io/obsidian/</guid>
-    <description><![CDATA[ Obsidianで取ったメモを公開する場所 ]]></description>
-    <pubDate>Sun, 10 May 2026 07:19:46 GMT</pubDate>
-  </item><item>
     <title>Issei Takeuchi</title>
     <link>https://issaimaru.github.io/obsidian/AboutMe</link>
     <guid>https://issaimaru.github.io/obsidian/AboutMe</guid>
     <description><![CDATA[ My name is Issei Takeuchi, also known online as issaimaru. B4 student in Information and Communications Engineering at Science Tokyo. ]]></description>
-    <pubDate>Sun, 10 May 2026 07:09:13 GMT</pubDate>
+    <pubDate>Sun, 10 May 2026 07:39:30 GMT</pubDate>
+  </item><item>
+    <title>Welcome to My Digital Garden</title>
+    <link>https://issaimaru.github.io/obsidian/</link>
+    <guid>https://issaimaru.github.io/obsidian/</guid>
+    <description><![CDATA[ Obsidianで取ったメモを公開する場所 ]]></description>
+    <pubDate>Sun, 10 May 2026 07:39:30 GMT</pubDate>
   </item><item>
     <title>ninvadersの高速化</title>
     <link>https://issaimaru.github.io/obsidian/research/ninvaders%E3%81%AE%E9%AB%98%E9%80%9F%E5%8C%96</link>
     <guid>https://issaimaru.github.io/obsidian/research/ninvaders%E3%81%AE%E9%AB%98%E9%80%9F%E5%8C%96</guid>
     <description><![CDATA[ ninvadersの初期状態で実行したときの動作 UARTのボーレートを変更 デフォルトの画面サイズで50FPSを出すとき，全画面が更新されると仮定して(実際は差分なのでもう少し小さい) 24 \times 80 =1920文字 1920 \times 8 \times 50 = 768[kbit/s] なので，115200bpsでは遅すぎる．なので1000000bpsに変更して実験を行った ・エイリアンはぬるぬる動くようになった ・入力は依然として受け付けない 画面表示処理の軽量化 フレーム更新ごとにrefreshScreen()関数を呼んでいたのを，画面更新処理が必要な時のみ呼ぶように変更... ]]></description>
-    <pubDate>Sun, 10 May 2026 07:09:13 GMT</pubDate>
+    <pubDate>Sun, 10 May 2026 07:39:30 GMT</pubDate>
   </item><item>
     <title>ninvadersの高速化のためにやったこと</title>
     <link>https://issaimaru.github.io/obsidian/research/ninvaders%E3%81%AE%E9%AB%98%E9%80%9F%E5%8C%96%E3%81%AE%E3%81%9F%E3%82%81%E3%81%AB%E3%82%84%E3%81%A3%E3%81%9F%E3%81%93%E3%81%A8</link>
     <guid>https://issaimaru.github.io/obsidian/research/ninvaders%E3%81%AE%E9%AB%98%E9%80%9F%E5%8C%96%E3%81%AE%E3%81%9F%E3%82%81%E3%81%AB%E3%82%84%E3%81%A3%E3%81%9F%E3%81%93%E3%81%A8</guid>
     <description><![CDATA[  fix: UART経由でのプレイでも問題なく動くように，画面表示処理を軽量化 · issaimaru/ninvaders@d967f01 NCurses based invaders game for RISC-V CPU. ]]></description>
-    <pubDate>Sun, 10 May 2026 07:09:13 GMT</pubDate>
+    <pubDate>Sun, 10 May 2026 07:39:30 GMT</pubDate>
   </item>
     </channel>
   </rss>
