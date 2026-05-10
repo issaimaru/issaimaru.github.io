@@ -18,7 +18,12 @@
 [[main]]
     name = "Posts"
     pageRef = "posts"
-    weight = 10
+    weight = 20
+
+[[main]]
+  name = "Obsidian"
+  url = "https://issaimaru.github.io/obsidian/"
+  weight = 50
 
 # -- Footer Menu --
 # The footer menu is displayed at the bottom of the page, just before
