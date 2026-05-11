@@ -6,11 +6,17 @@
       <description>Last 10 notes on Issei Takeuchi&#039;s Obsidian Pages</description>
       <generator>Quartz -- quartz.jzhao.xyz</generator>
       <item>
+    <title>これはテストです</title>
+    <link>https://issaimaru.github.io/obsidian/Secrets/%E3%81%93%E3%82%8C%E3%81%AF%E3%83%86%E3%82%B9%E3%83%88%E3%81%A7%E3%81%99</link>
+    <guid>https://issaimaru.github.io/obsidian/Secrets/%E3%81%93%E3%82%8C%E3%81%AF%E3%83%86%E3%82%B9%E3%83%88%E3%81%A7%E3%81%99</guid>
+    <description><![CDATA[ これはテストですが，絶対に知られてはいけないファイルです. ]]></description>
+    <pubDate>Mon, 11 May 2026 13:35:35 GMT</pubDate>
+  </item><item>
     <title>メモリバンク</title>
     <link>https://issaimaru.github.io/obsidian/Technical-Terms/%E3%83%A1%E3%83%A2%E3%83%AA%E3%83%90%E3%83%B3%E3%82%AF</link>
     <guid>https://issaimaru.github.io/obsidian/Technical-Terms/%E3%83%A1%E3%83%A2%E3%83%AA%E3%83%90%E3%83%B3%E3%82%AF</guid>
     <description><![CDATA[  コンピュータ内でメインメモリ（RAM）として用いられるメモリ装置の論理的な構成単位のこと． 一つの大きなメモリを複数の独立した小メモリ（バンク）に分けることで，帯域を向上させたり並列性を向上させることができる．. ]]></description>
-    <pubDate>Mon, 11 May 2026 12:32:10 GMT</pubDate>
+    <pubDate>Mon, 11 May 2026 13:35:35 GMT</pubDate>
   </item><item>
     <title>Welcome to My Digital Garden</title>
     <link>https://issaimaru.github.io/obsidian/</link>
