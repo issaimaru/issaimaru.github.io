@@ -7,16 +7,16 @@
       <generator>Quartz -- quartz.jzhao.xyz</generator>
       <item>
     <title>mokaさん</title>
-    <link>https://issaimaru.github.io/obsidian/Secrets%F0%9F%94%92/Carrer/%E5%85%88%E8%BC%A9%E3%81%AE%E5%8D%8A%E5%B0%8E%E4%BD%93%E7%B3%BB%E5%B0%B1%E6%B4%BB%E6%83%85%E5%A0%B1/moka%E3%81%95%E3%82%93</link>
-    <guid>https://issaimaru.github.io/obsidian/Secrets%F0%9F%94%92/Carrer/%E5%85%88%E8%BC%A9%E3%81%AE%E5%8D%8A%E5%B0%8E%E4%BD%93%E7%B3%BB%E5%B0%B1%E6%B4%BB%E6%83%85%E5%A0%B1/moka%E3%81%95%E3%82%93</guid>
+    <link>https://issaimaru.github.io/obsidian/Secrets/Carrer/%E5%85%88%E8%BC%A9%E3%81%AE%E5%8D%8A%E5%B0%8E%E4%BD%93%E7%B3%BB%E5%B0%B1%E6%B4%BB%E6%83%85%E5%A0%B1/moka%E3%81%95%E3%82%93</link>
+    <guid>https://issaimaru.github.io/obsidian/Secrets/Carrer/%E5%85%88%E8%BC%A9%E3%81%AE%E5%8D%8A%E5%B0%8E%E4%BD%93%E7%B3%BB%E5%B0%B1%E6%B4%BB%E6%83%85%E5%A0%B1/moka%E3%81%95%E3%82%93</guid>
     <description><![CDATA[ 就活 本選考とインターンについて 志望業界 半導体系 志望が半導体業界かつ論理設計できるところなので一部の人にしか刺さらないかも。 自己紹介 moka 19B/23M 情報工学系 (25卒) プログラミングは大学から 回路設計は学部の授業から 修論題目:「Linux が動作する FPGA 向けの 高性能な RISC-V SoC」 結果 2社受けてどちらも内定をいただいた。 プロセッサの設計を続けたかったので富士通の HPC 向けプロセッサ開発の部署 (富岳の CPU 作ってるところ) に行くことにした。 就活サイト LabBase 研究内容書いておくと割とよさげなスカウトが届く スカウト見ると... ]]></description>
-    <pubDate>Tue, 12 May 2026 10:10:03 GMT</pubDate>
+    <pubDate>Wed, 13 May 2026 05:50:05 GMT</pubDate>
   </item><item>
     <title>ninvadersの高速化のためにやったこと</title>
-    <link>https://issaimaru.github.io/obsidian/Secrets%F0%9F%94%92/ninvaders%E3%81%AE%E9%AB%98%E9%80%9F%E5%8C%96%E3%81%AE%E3%81%9F%E3%82%81%E3%81%AB%E3%82%84%E3%81%A3%E3%81%9F%E3%81%93%E3%81%A8</link>
-    <guid>https://issaimaru.github.io/obsidian/Secrets%F0%9F%94%92/ninvaders%E3%81%AE%E9%AB%98%E9%80%9F%E5%8C%96%E3%81%AE%E3%81%9F%E3%82%81%E3%81%AB%E3%82%84%E3%81%A3%E3%81%9F%E3%81%93%E3%81%A8</guid>
+    <link>https://issaimaru.github.io/obsidian/Secrets/ninvaders%E3%81%AE%E9%AB%98%E9%80%9F%E5%8C%96%E3%81%AE%E3%81%9F%E3%82%81%E3%81%AB%E3%82%84%E3%81%A3%E3%81%9F%E3%81%93%E3%81%A8</link>
+    <guid>https://issaimaru.github.io/obsidian/Secrets/ninvaders%E3%81%AE%E9%AB%98%E9%80%9F%E5%8C%96%E3%81%AE%E3%81%9F%E3%82%81%E3%81%AB%E3%82%84%E3%81%A3%E3%81%9F%E3%81%93%E3%81%A8</guid>
     <description><![CDATA[  fix: UART経由でのプレイでも問題なく動くように，画面表示処理を軽量化 · issaimaru/ninvaders@d967f01 NCurses based invaders game for RISC-V CPU. ]]></description>
-    <pubDate>Tue, 12 May 2026 10:10:03 GMT</pubDate>
+    <pubDate>Wed, 13 May 2026 05:50:05 GMT</pubDate>
   </item><item>
     <title>transformerにおけるバッチ処理</title>
     <link>https://issaimaru.github.io/obsidian/Technical-Terms/transformer%E3%81%AB%E3%81%8A%E3%81%91%E3%82%8B%E3%83%90%E3%83%83%E3%83%81%E5%87%A6%E7%90%86</link>
