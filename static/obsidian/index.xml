@@ -6,24 +6,6 @@
       <description>Last 10 notes on issaimaru&#039;s Obsidian Pages</description>
       <generator>Quartz -- quartz.jzhao.xyz</generator>
       <item>
-    <title>ようこそ</title>
-    <link>https://issaimaru.github.io/obsidian/Secrets/research/transformer_doc/%E3%82%88%E3%81%86%E3%81%93%E3%81%9D</link>
-    <guid>https://issaimaru.github.io/obsidian/Secrets/research/transformer_doc/%E3%82%88%E3%81%86%E3%81%93%E3%81%9D</guid>
-    <description><![CDATA[ これは新しい保管庫です。 何かをメモしたり、リンクを作成したり、Importerを試してみてください！ 準備ができたら、このノートを削除して保管庫を自分好みにしましょう。. ]]></description>
-    <pubDate>Thu, 14 May 2026 13:38:10 GMT</pubDate>
-  </item><item>
-    <title>signExtend</title>
-    <link>https://issaimaru.github.io/obsidian/Secrets/research/transformer_doc/%E7%AB%B9%E5%86%85/transformer_ext%E3%81%AE%E8%A7%A3%E8%AA%AD/%E9%96%A2%E6%95%B0%E7%BE%A4/signExtend</link>
-    <guid>https://issaimaru.github.io/obsidian/Secrets/research/transformer_doc/%E7%AB%B9%E5%86%85/transformer_ext%E3%81%AE%E8%A7%A3%E8%AA%AD/%E9%96%A2%E6%95%B0%E7%BE%A4/signExtend</guid>
-    <description><![CDATA[ What is this? 符号拡張するための関数 /** * @brief 符号拡張するための関数 * * @tparam BW ビット幅 * @param d 入力された値 * @return int 符号拡張された値 */ template&lt;int BW&gt; static int signExtend(int d){ int d0 = d &amp; MaskBits32(BW); int dSext = (d0 &gt;&gt; (BW - 1)) ? (0xffffffff &lt;&lt; (BW - 1)) : 0; return dSext | d0; }. ]]></description>
-    <pubDate>Thu, 14 May 2026 13:38:10 GMT</pubDate>
-  </item><item>
-    <title>ミーティング資料(5月13日)</title>
-    <link>https://issaimaru.github.io/obsidian/Secrets/research/transformer_doc/%E7%AB%B9%E5%86%85/%E3%83%9F%E3%83%BC%E3%83%86%E3%82%A3%E3%83%B3%E3%82%B0%E8%B3%87%E6%96%99(5%E6%9C%8813%E6%97%A5)</link>
-    <guid>https://issaimaru.github.io/obsidian/Secrets/research/transformer_doc/%E7%AB%B9%E5%86%85/%E3%83%9F%E3%83%BC%E3%83%86%E3%82%A3%E3%83%B3%E3%82%B0%E8%B3%87%E6%96%99(5%E6%9C%8813%E6%97%A5)</guid>
-    <description><![CDATA[  transformerのコードについての確認 NUM_COLSとUNITS_PER_COLを変更したときにテストが通らなくなる原因 transformerのコードについての確認 transformerのリポジトリはllama2.cppを高速化するためのカスタムハードウェアが記述されたリポジトリ？ llama2_test.cppのmake test_allは普通のRISC-V CPUでllama2.cppを実行した演算結果と、カスタムハードウェアを追加したRISC-V CPUでllama2.cppを実行した演算結果が一致するかをテストするもの？ ↓一色先生が最新コミットで修正済みなのでパス -... ]]></description>
-    <pubDate>Thu, 14 May 2026 13:38:10 GMT</pubDate>
-  </item><item>
     <title>Issei Takeuchi</title>
     <link>https://issaimaru.github.io/obsidian/AboutMe</link>
     <guid>https://issaimaru.github.io/obsidian/AboutMe</guid>
@@ -64,6 +46,24 @@
     <link>https://issaimaru.github.io/obsidian/Secrets/</link>
     <guid>https://issaimaru.github.io/obsidian/Secrets/</guid>
     <description><![CDATA[  ]]></description>
+    <pubDate>Thu, 14 May 2026 13:01:34 GMT</pubDate>
+  </item><item>
+    <title>ninvadersの高速化</title>
+    <link>https://issaimaru.github.io/obsidian/Secrets/research/ninvaders%E3%81%AE%E9%AB%98%E9%80%9F%E5%8C%96</link>
+    <guid>https://issaimaru.github.io/obsidian/Secrets/research/ninvaders%E3%81%AE%E9%AB%98%E9%80%9F%E5%8C%96</guid>
+    <description><![CDATA[ ninvadersの初期状態で実行したときの動作 UARTのボーレートを変更 デフォルトの画面サイズで50FPSを出すとき，全画面が更新されると仮定して(実際は差分なのでもう少し小さい) 24 \times 80 =1920文字 1920 \times 8 \times 50 = 768[kbit/s] なので，115200bpsでは遅すぎる．なので1000000bpsに変更して実験を行った ・エイリアンはぬるぬる動くようになった ・入力は依然として受け付けない 画面表示処理の軽量化 フレーム更新ごとにrefreshScreen()関数を呼んでいたのを，画面更新処理が必要な時のみ呼ぶように変更... ]]></description>
+    <pubDate>Thu, 14 May 2026 13:01:34 GMT</pubDate>
+  </item><item>
+    <title>ninvadersの高速化のためにやったこと</title>
+    <link>https://issaimaru.github.io/obsidian/Secrets/research/ninvaders%E3%81%AE%E9%AB%98%E9%80%9F%E5%8C%96%E3%81%AE%E3%81%9F%E3%82%81%E3%81%AB%E3%82%84%E3%81%A3%E3%81%9F%E3%81%93%E3%81%A8</link>
+    <guid>https://issaimaru.github.io/obsidian/Secrets/research/ninvaders%E3%81%AE%E9%AB%98%E9%80%9F%E5%8C%96%E3%81%AE%E3%81%9F%E3%82%81%E3%81%AB%E3%82%84%E3%81%A3%E3%81%9F%E3%81%93%E3%81%A8</guid>
+    <description><![CDATA[  fix: UART経由でのプレイでも問題なく動くように，画面表示処理を軽量化 · issaimaru/ninvaders@d967f01 NCurses based invaders game for RISC-V CPU. ]]></description>
+    <pubDate>Thu, 14 May 2026 13:01:34 GMT</pubDate>
+  </item><item>
+    <title>transformerにおけるバッチ処理</title>
+    <link>https://issaimaru.github.io/obsidian/Technical-Terms/transformer%E3%81%AB%E3%81%8A%E3%81%91%E3%82%8B%E3%83%90%E3%83%83%E3%83%81%E5%87%A6%E7%90%86</link>
+    <guid>https://issaimaru.github.io/obsidian/Technical-Terms/transformer%E3%81%AB%E3%81%8A%E3%81%91%E3%82%8B%E3%83%90%E3%83%83%E3%83%81%E5%87%A6%E7%90%86</guid>
+    <description><![CDATA[ 複数のトークン列をまとめて一回の行列演算で処理すること． 小さな行列を複数回計算するのではなく一度に処理することで高速化が可能となる． Python♪ディープラーニングを高速化するバッチ処理とは ディープラーニングではバッチ処理という方法が使えます。難しそうに聞こえますが、バッチ処理とは「データをまとめて計算する処理」のことです。そして、まとめて計算することで速くなります。具体例によりバッチ処理の概要を説明し、速度の比較を行います。 snowtree-injune.com . ]]></description>
     <pubDate>Thu, 14 May 2026 13:01:34 GMT</pubDate>
   </item>
     </channel>
