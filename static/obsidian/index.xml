@@ -6,6 +6,12 @@
       <description>Last 10 notes on issaimaru&#039;s Obsidian Pages</description>
       <generator>Quartz -- quartz.jzhao.xyz</generator>
       <item>
+    <title>KVキャッシュ</title>
+    <link>https://issaimaru.github.io/obsidian/Technical-Terms/KV%E3%82%AD%E3%83%A3%E3%83%83%E3%82%B7%E3%83%A5</link>
+    <guid>https://issaimaru.github.io/obsidian/Technical-Terms/KV%E3%82%AD%E3%83%A3%E3%83%83%E3%82%B7%E3%83%A5</guid>
+    <description><![CDATA[  KVキャッシュを完全に理解する zenn.dev . ]]></description>
+    <pubDate>Fri, 15 May 2026 04:30:10 GMT</pubDate>
+  </item><item>
     <title>enum</title>
     <link>https://issaimaru.github.io/obsidian/Software/c-c++/enum</link>
     <guid>https://issaimaru.github.io/obsidian/Software/c-c++/enum</guid>
@@ -58,12 +64,6 @@
     <link>https://issaimaru.github.io/obsidian/Secrets/Carrer/%E5%85%88%E8%BC%A9%E3%81%AE%E5%8D%8A%E5%B0%8E%E4%BD%93%E7%B3%BB%E5%B0%B1%E6%B4%BB%E6%83%85%E5%A0%B1/moka%E3%81%95%E3%82%93</link>
     <guid>https://issaimaru.github.io/obsidian/Secrets/Carrer/%E5%85%88%E8%BC%A9%E3%81%AE%E5%8D%8A%E5%B0%8E%E4%BD%93%E7%B3%BB%E5%B0%B1%E6%B4%BB%E6%83%85%E5%A0%B1/moka%E3%81%95%E3%82%93</guid>
     <description><![CDATA[ 就活 本選考とインターンについて 志望業界 半導体系 志望が半導体業界かつ論理設計できるところなので一部の人にしか刺さらないかも。 自己紹介 moka 19B/23M 情報工学系 (25卒) プログラミングは大学から 回路設計は学部の授業から 修論題目:「Linux が動作する FPGA 向けの 高性能な RISC-V SoC」 結果 2社受けてどちらも内定をいただいた。 プロセッサの設計を続けたかったので富士通の HPC 向けプロセッサ開発の部署 (富岳の CPU 作ってるところ) に行くことにした。 就活サイト LabBase 研究内容書いておくと割とよさげなスカウトが届く スカウト見ると... ]]></description>
-    <pubDate>Thu, 14 May 2026 13:01:34 GMT</pubDate>
-  </item><item>
-    <title>日々の悪かったことを連ねる</title>
-    <link>https://issaimaru.github.io/obsidian/Secrets/Carrer/%E9%9D%A2%E6%8E%A5%E5%AF%BE%E7%AD%96/%E5%8F%8D%E7%9C%81%E4%BC%9A/%E6%97%A5%E3%80%85%E3%81%AE%E6%82%AA%E3%81%8B%E3%81%A3%E3%81%9F%E3%81%93%E3%81%A8%E3%82%92%E9%80%A3%E3%81%AD%E3%82%8B</link>
-    <guid>https://issaimaru.github.io/obsidian/Secrets/Carrer/%E9%9D%A2%E6%8E%A5%E5%AF%BE%E7%AD%96/%E5%8F%8D%E7%9C%81%E4%BC%9A/%E6%97%A5%E3%80%85%E3%81%AE%E6%82%AA%E3%81%8B%E3%81%A3%E3%81%9F%E3%81%93%E3%81%A8%E3%82%92%E9%80%A3%E3%81%AD%E3%82%8B</guid>
-    <description><![CDATA[  StudyPlusで最近いきりぎみ 自分のやってることをしゃべらない，結果だけをつぶやく あとは楽しいことだけいう 『優越感に浸るナルシスト』が 圧倒的な成果を出す理由【９９％大衆は閲覧注意】 ご視聴ありがとうございます。『強い男を取り戻す』僕自身が過去そうだったように、現在日本の男は”弱って”います。僕はそんな男たちに、未来に対する『希望』と『モチベーション』を与え、人生をより良い方向へと進んでいただけるよう僕自身の成長過程も含めて、全力で情報発信しております。JSOCIALコミュ力自信マスターコース.. ]]></description>
     <pubDate>Thu, 14 May 2026 13:01:34 GMT</pubDate>
   </item>
     </channel>
