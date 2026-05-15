@@ -9,8 +9,8 @@
     <title>CPUキャッシュ</title>
     <link>https://issaimaru.github.io/obsidian/Technical-Terms/CPU%E3%82%AD%E3%83%A3%E3%83%83%E3%82%B7%E3%83%A5</link>
     <guid>https://issaimaru.github.io/obsidian/Technical-Terms/CPU%E3%82%AD%E3%83%A3%E3%83%83%E3%82%B7%E3%83%A5</guid>
-    <description><![CDATA[ CPUキャッシュは、プロセッサとメインメモリの速度差を埋めるために設計された高速なバッファメモリのことである． プロセッサの処理速度に対して，RAMへのアクセスがボトルネックになっているので，CPUの近くに小容量でも超高速なメモリを配置することでこれを解決した． L1キャッシュ CPUコアに最も近い位置にある最速のメモリ 物理的制約によって，L2キャッシュ，L3キャッシュよりも小容量である L2キャッシュ L1キャッシュの次にCPUコアに近い位置にあるメモリで，速度と容量のバランスがとれたｓ. ]]></description>
-    <pubDate>Fri, 15 May 2026 04:50:06 GMT</pubDate>
+    <description><![CDATA[ CPUキャッシュは、プロセッサとメインメモリの速度差を埋めるために設計された高速なバッファメモリのことである． プロセッサの処理速度に対して，RAMへのアクセスがボトルネックになっているので，CPUの近くに小容量でも超高速なメモリを配置することでこれを解決した． L1キャッシュ CPUコアに最も近い位置にある最速のメモリ 物理的制約によって，L2キャッシュ，L3キャッシュよりも小容量である 現在実行中の命令や，直前に使用したデータなど，最も頻繁にアクセスされる情報を保持することで，CPUコアの待機時間を最小限に抑える役割を果たしている． L2キャッシュ L1キャッシュの次にCPUコアに近い位置... ]]></description>
+    <pubDate>Fri, 15 May 2026 05:00:07 GMT</pubDate>
   </item><item>
     <title>KVキャッシュ</title>
     <link>https://issaimaru.github.io/obsidian/Technical-Terms/KV%E3%82%AD%E3%83%A3%E3%83%83%E3%82%B7%E3%83%A5</link>
