@@ -6,6 +6,12 @@
       <description>Last 10 notes on issaimaru&#039;s Obsidian Pages</description>
       <generator>Quartz -- quartz.jzhao.xyz</generator>
       <item>
+    <title>メモリインタリーブ</title>
+    <link>https://issaimaru.github.io/obsidian/Technical-Terms/%E3%83%A1%E3%83%A2%E3%83%AA%E3%82%A4%E3%83%B3%E3%82%BF%E3%83%AA%E3%83%BC%E3%83%96</link>
+    <guid>https://issaimaru.github.io/obsidian/Technical-Terms/%E3%83%A1%E3%83%A2%E3%83%AA%E3%82%A4%E3%83%B3%E3%82%BF%E3%83%AA%E3%83%BC%E3%83%96</guid>
+    <description><![CDATA[ CPUがメモリへアクセス要求を行ってからデータを受け取るまでにかかる時間は，CPUの処理速度に対して非常にボトルネックになっている． 一方，メモリへのアクセス要求は短期的には局所性が極めて強く，連続した領域に順番に読み書きを行うことが多い．この特徴を利用して，複数のメモリバンクにまたがって連続したアドレスを交互に振っておき，あるデータにアクセスする遅延時間の最中に次のアドレスへアクセス要求を発行して時間を有効利用するのがメモリインターリーブである．. ]]></description>
+    <pubDate>Sat, 16 May 2026 05:10:08 GMT</pubDate>
+  </item><item>
     <title>ワード(CPU)</title>
     <link>https://issaimaru.github.io/obsidian/Technical-Terms/%E3%83%AF%E3%83%BC%E3%83%89(CPU)</link>
     <guid>https://issaimaru.github.io/obsidian/Technical-Terms/%E3%83%AF%E3%83%BC%E3%83%89(CPU)</guid>
@@ -59,12 +65,6 @@
     <guid>https://issaimaru.github.io/obsidian/Technical-Terms/%E3%83%A1%E3%83%A2%E3%83%AA%E3%83%90%E3%83%B3%E3%82%AF</guid>
     <description><![CDATA[  コンピュータ内でメインメモリ（RAM）として用いられるメモリ装置の論理的な構成単位のこと． 一つの大きなメモリを複数の独立した小メモリ（バンク）に分けることで，帯域を向上させたり並列性を向上させることができる．. ]]></description>
     <pubDate>Thu, 14 May 2026 14:36:43 GMT</pubDate>
-  </item><item>
-    <title>Issei Takeuchi</title>
-    <link>https://issaimaru.github.io/obsidian/AboutMe</link>
-    <guid>https://issaimaru.github.io/obsidian/AboutMe</guid>
-    <description><![CDATA[ My name is Issei Takeuchi, also known online as issaimaru. B4 student in Information and Communications Engineering at Science Tokyo. ]]></description>
-    <pubDate>Thu, 14 May 2026 13:01:34 GMT</pubDate>
   </item>
     </channel>
   </rss>
