@@ -6,6 +6,12 @@
       <description>Last 10 notes on issaimaru&#039;s Obsidian Pages</description>
       <generator>Quartz -- quartz.jzhao.xyz</generator>
       <item>
+    <title>テストベンチ</title>
+    <link>https://issaimaru.github.io/obsidian/Secrets/research/transformer_doc/%E7%AB%B9%E5%86%85/transformer_ext%E3%81%AE%E8%A7%A3%E8%AA%AD/%E3%83%86%E3%82%B9%E3%83%88%E3%83%99%E3%83%B3%E3%83%81</link>
+    <guid>https://issaimaru.github.io/obsidian/Secrets/research/transformer_doc/%E7%AB%B9%E5%86%85/transformer_ext%E3%81%AE%E8%A7%A3%E8%AA%AD/%E3%83%86%E3%82%B9%E3%83%88%E3%83%99%E3%83%B3%E3%83%81</guid>
+    <description><![CDATA[ ⚠ Switch to EXCALIDRAW VIEW in the MORE OPTIONS menu of this document. ]]></description>
+    <pubDate>Wed, 20 May 2026 03:00:08 GMT</pubDate>
+  </item><item>
     <title>アーキテクチャ</title>
     <link>https://issaimaru.github.io/obsidian/Secrets/research/transformer_doc/%E7%AB%B9%E5%86%85/transformer_ext%E3%81%AE%E8%A7%A3%E8%AA%AD/%E3%82%A2%E3%83%BC%E3%82%AD%E3%83%86%E3%82%AF%E3%83%81%E3%83%A3</link>
     <guid>https://issaimaru.github.io/obsidian/Secrets/research/transformer_doc/%E7%AB%B9%E5%86%85/transformer_ext%E3%81%AE%E8%A7%A3%E8%AA%AD/%E3%82%A2%E3%83%BC%E3%82%AD%E3%83%86%E3%82%AF%E3%83%81%E3%83%A3</guid>
@@ -58,12 +64,6 @@
     <link>https://issaimaru.github.io/obsidian/Secrets/research/transformer_doc/%E7%AB%B9%E5%86%85/LLM%E3%81%AE%E8%A6%8B%E8%A7%A3/transformer_ext_background</link>
     <guid>https://issaimaru.github.io/obsidian/Secrets/research/transformer_doc/%E7%AB%B9%E5%86%85/LLM%E3%81%AE%E8%A6%8B%E8%A7%A3/transformer_ext_background</guid>
     <description><![CDATA[ transformer_ext.h 徹底解説 — RISC-V AI アクセラレータの全体像 対象読者：RISC-V の基礎知識があるが、BFP 数値表現・Transformer 推論ハードウェアの知識がない人 対象コード：transformer_ext.h, qvutil.h（一色研究室 Transformer アクセラレータ C++/C2RTL モデル） 目次 1. ]]></description>
-    <pubDate>Wed, 20 May 2026 01:46:49 GMT</pubDate>
-  </item><item>
-    <title>C2RTL用語</title>
-    <link>https://issaimaru.github.io/obsidian/Secrets/research/transformer_doc/%E7%AB%B9%E5%86%85/transformer_ext%E3%81%AE%E8%A7%A3%E8%AA%AD/C2RTL%E7%94%A8%E8%AA%9E</link>
-    <guid>https://issaimaru.github.io/obsidian/Secrets/research/transformer_doc/%E7%AB%B9%E5%86%85/transformer_ext%E3%81%AE%E8%A7%A3%E8%AA%AD/C2RTL%E7%94%A8%E8%AA%9E</guid>
-    <description><![CDATA[ #define _BW(N) __attribute__((C2RTL_bit_width(N))) #define _T(N) __attribute__((C2RTL_type(N))) #define _TOP(N) __attribute__((C2RTL_top_function(N))) typedef unsigned short UINT16 _BW(16), UINT10 _BW(10); typedef signed short SINT16 _BW(16), SINT10 _BW(10); typedef UINT16 ST_UINT16 _T(state), M_UIN... ]]></description>
     <pubDate>Wed, 20 May 2026 01:46:49 GMT</pubDate>
   </item>
     </channel>
