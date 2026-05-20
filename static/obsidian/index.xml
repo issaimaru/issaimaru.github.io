@@ -6,65 +6,65 @@
       <description>Last 10 notes on issaimaru&#039;s Obsidian Pages</description>
       <generator>Quartz -- quartz.jzhao.xyz</generator>
       <item>
-    <title>RISC-V CPUにおける高速化手法</title>
-    <link>https://issaimaru.github.io/obsidian/Hardware/RISC-V-CPU%E3%81%AB%E3%81%8A%E3%81%91%E3%82%8B%E9%AB%98%E9%80%9F%E5%8C%96%E6%89%8B%E6%B3%95</link>
-    <guid>https://issaimaru.github.io/obsidian/Hardware/RISC-V-CPU%E3%81%AB%E3%81%8A%E3%81%91%E3%82%8B%E9%AB%98%E9%80%9F%E5%8C%96%E6%89%8B%E6%B3%95</guid>
-    <description><![CDATA[ 目的 2026年度コンピューター論理設計のProcessor Design Contestのため ベースとなるプロセッサ 実行するコード /***************************************************************/ /** program for CLD design contest 2023 (Version 2023-05-14a) **/ /** do not modify this code **/ /***************************************************************/ i... ]]></description>
-    <pubDate>Mon, 18 May 2026 14:20:36 GMT</pubDate>
+    <title>Connect elements</title>
+    <link>https://issaimaru.github.io/obsidian/Secrets/research/transformer_doc/Excalidraw/Scripts/Downloaded/Connect-elements</link>
+    <guid>https://issaimaru.github.io/obsidian/Secrets/research/transformer_doc/Excalidraw/Scripts/Downloaded/Connect-elements</guid>
+    <description><![CDATA[ /* This script will connect two objects with an arrow. If either of the objects are a set of grouped elements (e.g. ]]></description>
+    <pubDate>Wed, 20 May 2026 01:41:48 GMT</pubDate>
   </item><item>
-    <title>メモリインタリーブ</title>
-    <link>https://issaimaru.github.io/obsidian/Technical-Terms/%E3%83%A1%E3%83%A2%E3%83%AA%E3%82%A4%E3%83%B3%E3%82%BF%E3%83%AA%E3%83%BC%E3%83%96</link>
-    <guid>https://issaimaru.github.io/obsidian/Technical-Terms/%E3%83%A1%E3%83%A2%E3%83%AA%E3%82%A4%E3%83%B3%E3%82%BF%E3%83%AA%E3%83%BC%E3%83%96</guid>
-    <description><![CDATA[ CPUがメモリへアクセス要求を行ってからデータを受け取るまでにかかる時間は，CPUの処理速度に対して非常にボトルネックになっている． 一方，メモリへのアクセス要求は短期的には局所性が極めて強く，連続した領域に順番に読み書きを行うことが多い．この特徴を利用して，複数のメモリバンクにまたがって連続したアドレスを交互に振っておき，あるデータにアクセスする遅延時間の最中に次のアドレスへアクセス要求を発行して時間を有効利用するのがメモリインターリーブである．. ]]></description>
-    <pubDate>Sat, 16 May 2026 05:10:08 GMT</pubDate>
+    <title>export.py</title>
+    <link>https://issaimaru.github.io/obsidian/Secrets/research/transformer_doc/%E5%9C%9F%E6%A9%8B/transformer/llama2.c/export.py</link>
+    <guid>https://issaimaru.github.io/obsidian/Secrets/research/transformer_doc/%E5%9C%9F%E6%A9%8B/transformer/llama2.c/export.py</guid>
+    <description><![CDATA[ Python（PyTorch）側にあるモデルのデータ（重み）を、C言語のプログラムで読み込める独自のシンプルな形式（.binファイル）に変換するためのツールです。 主な役割: PythonとC言語の間の「橋渡し」をします。C言語はPyTorchの複雑なデータ形式を直接読めないため、数字の羅列としてのシンプルなバイナリデータに書き出します。 重要な構成要素: version1_export / version2_export: モデルのデータを.binファイルとして書き出します（version 2ではモデルを軽量化する「量子化」という処理も行っています）。 load_meta_model / l... ]]></description>
+    <pubDate>Wed, 20 May 2026 01:41:48 GMT</pubDate>
   </item><item>
-    <title>ワード(CPU)</title>
-    <link>https://issaimaru.github.io/obsidian/Technical-Terms/%E3%83%AF%E3%83%BC%E3%83%89(CPU)</link>
-    <guid>https://issaimaru.github.io/obsidian/Technical-Terms/%E3%83%AF%E3%83%BC%E3%83%89(CPU)</guid>
-    <description><![CDATA[ コンピュータのCPUが一度の命令で処理・転送できるデータ量の単位 例えば最近のCPUは64bitなので，1ワード=64bitである． STM32では1ワード=32bitである．. ]]></description>
-    <pubDate>Fri, 15 May 2026 06:50:11 GMT</pubDate>
+    <title>model.py</title>
+    <link>https://issaimaru.github.io/obsidian/Secrets/research/transformer_doc/%E5%9C%9F%E6%A9%8B/transformer/llama2.c/model.py</link>
+    <guid>https://issaimaru.github.io/obsidian/Secrets/research/transformer_doc/%E5%9C%9F%E6%A9%8B/transformer/llama2.c/model.py</guid>
+    <description><![CDATA[ PyTorchという機械学習フレームワークを使って、Llama 2の「脳」の構造（ニューラルネットワーク）そのものを定義しているファイルです。 主な役割: Llama 2が文章を理解し生成するための計算手順（Transformerアーキテクチャ）が書かれています。 重要な構成要素: ModelArgs: モデルの大きさや層の数などの設定（ハイパーパラメータ）をまとめています。 Attention / TransformerBlock: 文章の文脈を理解するための「アテンション機構」と呼ばれるAIの核となる処理が書かれています。 generate: 実際に与えられた単語の続きを予測し、文章を生成... ]]></description>
+    <pubDate>Wed, 20 May 2026 01:41:48 GMT</pubDate>
   </item><item>
-    <title>KVキャッシュ</title>
-    <link>https://issaimaru.github.io/obsidian/Technical-Terms/KV%E3%82%AD%E3%83%A3%E3%83%83%E3%82%B7%E3%83%A5</link>
-    <guid>https://issaimaru.github.io/obsidian/Technical-Terms/KV%E3%82%AD%E3%83%A3%E3%83%83%E3%82%B7%E3%83%A5</guid>
-    <description><![CDATA[  KVキャッシュを完全に理解する zenn.dev CPUキャッシュ と同じく，Transformerにおける計算の高速化をするために，KeyとQueryを一時的に保存すること. ]]></description>
-    <pubDate>Fri, 15 May 2026 05:10:06 GMT</pubDate>
+    <title>transformer_ext_analysis</title>
+    <link>https://issaimaru.github.io/obsidian/Secrets/research/transformer_doc/%E7%AB%B9%E5%86%85/LLM%E3%81%AE%E8%A6%8B%E8%A7%A3/transformer_ext_analysis</link>
+    <guid>https://issaimaru.github.io/obsidian/Secrets/research/transformer_doc/%E7%AB%B9%E5%86%85/LLM%E3%81%AE%E8%A6%8B%E8%A7%A3/transformer_ext_analysis</guid>
+    <description><![CDATA[ transformer_ext.h 計算部分・正規化処理の徹底解説 ― NUM_UNITS依存性の全列挙と NUM_UNITS=4 における失敗原因分析 ― 目次 全体アーキテクチャ概要 前提知識：Block Floating Point (BFP) MAC（積和）演算の理論と実装 正規化処理（ExpNorm） RMSNorm・Softmax・RoPE NUM_UNITSが演算結果に影響する箇所の全列挙 各箇所の徹底解説 テストログの分析 原因分析 正確性の自己評価 第1章：全体アーキテクチャ概要 1.1 システムの目的 本コードは、Transformerモデルの推論をハードウェア（FPGA等... ]]></description>
+    <pubDate>Wed, 20 May 2026 01:41:48 GMT</pubDate>
   </item><item>
-    <title>CPUキャッシュ</title>
-    <link>https://issaimaru.github.io/obsidian/Technical-Terms/CPU%E3%82%AD%E3%83%A3%E3%83%83%E3%82%B7%E3%83%A5</link>
-    <guid>https://issaimaru.github.io/obsidian/Technical-Terms/CPU%E3%82%AD%E3%83%A3%E3%83%83%E3%82%B7%E3%83%A5</guid>
-    <description><![CDATA[ CPUキャッシュは、プロセッサとメインメモリの速度差を埋めるために設計された高速なバッファメモリのことである． プロセッサの処理速度に対して，RAMへのアクセスがボトルネックになっているので，CPUの近くに小容量でも超高速なメモリを配置することでこれを解決した． L1キャッシュ CPUコアに最も近い位置にある最速のメモリ 物理的制約によって，L2キャッシュ，L3キャッシュよりも小容量である 現在実行中の命令や，直前に使用したデータなど，最も頻繁にアクセスされる情報を保持することで，CPUコアの待機時間を最小限に抑える役割を果たしている． L2キャッシュ L1キャッシュの次にCPUコアに近い位置... ]]></description>
-    <pubDate>Fri, 15 May 2026 05:00:07 GMT</pubDate>
+    <title>transformer_ext_analysis_v2</title>
+    <link>https://issaimaru.github.io/obsidian/Secrets/research/transformer_doc/%E7%AB%B9%E5%86%85/LLM%E3%81%AE%E8%A6%8B%E8%A7%A3/transformer_ext_analysis_v2</link>
+    <guid>https://issaimaru.github.io/obsidian/Secrets/research/transformer_doc/%E7%AB%B9%E5%86%85/LLM%E3%81%AE%E8%A6%8B%E8%A7%A3/transformer_ext_analysis_v2</guid>
+    <description><![CDATA[ transformer_ext.h 徹底解析レポート（改訂版 v2） NUM_UNITS=4 における計算・正規化処理の全依存箇所と根本原因分析 目次 前提知識 NUM_UNITS=4 における全定数導出 NUM_UNITS依存箇所の全列挙と詳細解説 テストログの詳細パターン分析 根本原因分析 正確性の自己評価 1. ]]></description>
+    <pubDate>Wed, 20 May 2026 01:41:48 GMT</pubDate>
   </item><item>
-    <title>enum</title>
-    <link>https://issaimaru.github.io/obsidian/Software/c-c++/enum</link>
-    <guid>https://issaimaru.github.io/obsidian/Software/c-c++/enum</guid>
-    <description><![CDATA[ enumを使うことで、数値の意味を明確にし、プログラムの理解を容易にします。 enum タグ名 { 定数名1, 定数名2, .. ]]></description>
-    <pubDate>Thu, 14 May 2026 15:10:06 GMT</pubDate>
+    <title>transformer_ext_background(1)</title>
+    <link>https://issaimaru.github.io/obsidian/Secrets/research/transformer_doc/%E7%AB%B9%E5%86%85/LLM%E3%81%AE%E8%A6%8B%E8%A7%A3/transformer_ext_background(1)</link>
+    <guid>https://issaimaru.github.io/obsidian/Secrets/research/transformer_doc/%E7%AB%B9%E5%86%85/LLM%E3%81%AE%E8%A6%8B%E8%A7%A3/transformer_ext_background(1)</guid>
+    <description><![CDATA[ transformer_ext.h 徹底解説 — RISC-V AI アクセラレータの全体像 対象読者：RISC-V の基礎知識があるが、BFP 数値表現・Transformer 推論ハードウェアの知識がない人 対象コード：transformer_ext.h, qvutil.h（一色研究室 Transformer アクセラレータ C++/C2RTL モデル） 目次 1. ]]></description>
+    <pubDate>Wed, 20 May 2026 01:41:48 GMT</pubDate>
   </item><item>
-    <title>ようこそ</title>
-    <link>https://issaimaru.github.io/obsidian/Secrets/research/transformer_doc/%E3%82%88%E3%81%86%E3%81%93%E3%81%9D</link>
-    <guid>https://issaimaru.github.io/obsidian/Secrets/research/transformer_doc/%E3%82%88%E3%81%86%E3%81%93%E3%81%9D</guid>
-    <description><![CDATA[ これは新しい保管庫です。 何かをメモしたり、リンクを作成したり、Importerを試してみてください！ 準備ができたら、このノートを削除して保管庫を自分好みにしましょう。. ]]></description>
-    <pubDate>Thu, 14 May 2026 14:36:43 GMT</pubDate>
+    <title>transformer_ext_background</title>
+    <link>https://issaimaru.github.io/obsidian/Secrets/research/transformer_doc/%E7%AB%B9%E5%86%85/LLM%E3%81%AE%E8%A6%8B%E8%A7%A3/transformer_ext_background</link>
+    <guid>https://issaimaru.github.io/obsidian/Secrets/research/transformer_doc/%E7%AB%B9%E5%86%85/LLM%E3%81%AE%E8%A6%8B%E8%A7%A3/transformer_ext_background</guid>
+    <description><![CDATA[ transformer_ext.h 徹底解説 — RISC-V AI アクセラレータの全体像 対象読者：RISC-V の基礎知識があるが、BFP 数値表現・Transformer 推論ハードウェアの知識がない人 対象コード：transformer_ext.h, qvutil.h（一色研究室 Transformer アクセラレータ C++/C2RTL モデル） 目次 1. ]]></description>
+    <pubDate>Wed, 20 May 2026 01:41:48 GMT</pubDate>
   </item><item>
-    <title>signExtend</title>
-    <link>https://issaimaru.github.io/obsidian/Secrets/research/transformer_doc/%E7%AB%B9%E5%86%85/transformer_ext%E3%81%AE%E8%A7%A3%E8%AA%AD/%E9%96%A2%E6%95%B0%E7%BE%A4/signExtend</link>
-    <guid>https://issaimaru.github.io/obsidian/Secrets/research/transformer_doc/%E7%AB%B9%E5%86%85/transformer_ext%E3%81%AE%E8%A7%A3%E8%AA%AD/%E9%96%A2%E6%95%B0%E7%BE%A4/signExtend</guid>
-    <description><![CDATA[ What is this? 符号拡張するための関数 /** * @brief 符号拡張するための関数 * * @tparam BW ビット幅 * @param d 入力された値 * @return int 符号拡張された値 */ template&lt;int BW&gt; static int signExtend(int d){ int d0 = d &amp; MaskBits32(BW); int dSext = (d0 &gt;&gt; (BW - 1)) ? (0xffffffff &lt;&lt; (BW - 1)) : 0; return dSext | d0; }. ]]></description>
-    <pubDate>Thu, 14 May 2026 14:36:43 GMT</pubDate>
+    <title>C2RTL用語</title>
+    <link>https://issaimaru.github.io/obsidian/Secrets/research/transformer_doc/%E7%AB%B9%E5%86%85/transformer_ext%E3%81%AE%E8%A7%A3%E8%AA%AD/C2RTL%E7%94%A8%E8%AA%9E</link>
+    <guid>https://issaimaru.github.io/obsidian/Secrets/research/transformer_doc/%E7%AB%B9%E5%86%85/transformer_ext%E3%81%AE%E8%A7%A3%E8%AA%AD/C2RTL%E7%94%A8%E8%AA%9E</guid>
+    <description><![CDATA[ #define _BW(N) __attribute__((C2RTL_bit_width(N))) #define _T(N) __attribute__((C2RTL_type(N))) #define _TOP(N) __attribute__((C2RTL_top_function(N))) typedef unsigned short UINT16 _BW(16), UINT10 _BW(10); typedef signed short SINT16 _BW(16), SINT10 _BW(10); typedef UINT16 ST_UINT16 _T(state), M_UIN... ]]></description>
+    <pubDate>Wed, 20 May 2026 01:41:48 GMT</pubDate>
   </item><item>
-    <title>ミーティング資料(5月13日)</title>
-    <link>https://issaimaru.github.io/obsidian/Secrets/research/transformer_doc/%E7%AB%B9%E5%86%85/%E3%83%9F%E3%83%BC%E3%83%86%E3%82%A3%E3%83%B3%E3%82%B0%E8%B3%87%E6%96%99(5%E6%9C%8813%E6%97%A5)</link>
-    <guid>https://issaimaru.github.io/obsidian/Secrets/research/transformer_doc/%E7%AB%B9%E5%86%85/%E3%83%9F%E3%83%BC%E3%83%86%E3%82%A3%E3%83%B3%E3%82%B0%E8%B3%87%E6%96%99(5%E6%9C%8813%E6%97%A5)</guid>
-    <description><![CDATA[  transformerのコードについての確認 NUM_COLSとUNITS_PER_COLを変更したときにテストが通らなくなる原因 transformerのコードについての確認 transformerのリポジトリはllama2.cppを高速化するためのカスタムハードウェアが記述されたリポジトリ？ llama2_test.cppのmake test_allは普通のRISC-V CPUでllama2.cppを実行した演算結果と、カスタムハードウェアを追加したRISC-V CPUでllama2.cppを実行した演算結果が一致するかをテストするもの？ ↓一色先生が最新コミットで修正済みなのでパス -... ]]></description>
-    <pubDate>Thu, 14 May 2026 14:36:43 GMT</pubDate>
+    <title>NUM_COLSとUNITS_PER_COLSによる回路規模の違い</title>
+    <link>https://issaimaru.github.io/obsidian/Secrets/research/transformer_doc/%E7%AB%B9%E5%86%85/transformer_ext%E3%81%AE%E8%A7%A3%E8%AA%AD/NUM_COLS%E3%81%A8UNITS_PER_COLS%E3%81%AB%E3%82%88%E3%82%8B%E5%9B%9E%E8%B7%AF%E8%A6%8F%E6%A8%A1%E3%81%AE%E9%81%95%E3%81%84</link>
+    <guid>https://issaimaru.github.io/obsidian/Secrets/research/transformer_doc/%E7%AB%B9%E5%86%85/transformer_ext%E3%81%AE%E8%A7%A3%E8%AA%AD/NUM_COLS%E3%81%A8UNITS_PER_COLS%E3%81%AB%E3%82%88%E3%82%8B%E5%9B%9E%E8%B7%AF%E8%A6%8F%E6%A8%A1%E3%81%AE%E9%81%95%E3%81%84</guid>
+    <description><![CDATA[  UNITS_PER_COLNUM_COLSTotal nodesTotal gatespipeRegsCombined gates481277602310872.0525642536578.044916851424641.0348181597092.528931021452894.0348511639054.02462350899780.0260781053297.0transformer_ext.hでコメントアウトされていたC2RTLの出力から取ってきた 表からわかること UNITS_PER_COLとNUM_COLSの値が大きくなるほど回路規模も大きくなる(当たり前) NUM_UNITS=... ]]></description>
+    <pubDate>Wed, 20 May 2026 01:41:48 GMT</pubDate>
   </item><item>
-    <title>transformerにおけるバッチ処理</title>
-    <link>https://issaimaru.github.io/obsidian/Technical-Terms/transformer%E3%81%AB%E3%81%8A%E3%81%91%E3%82%8B%E3%83%90%E3%83%83%E3%83%81%E5%87%A6%E7%90%86</link>
-    <guid>https://issaimaru.github.io/obsidian/Technical-Terms/transformer%E3%81%AB%E3%81%8A%E3%81%91%E3%82%8B%E3%83%90%E3%83%83%E3%83%81%E5%87%A6%E7%90%86</guid>
-    <description><![CDATA[ 複数のトークン列をまとめて一回の行列演算で処理すること． 小さな行列を複数回計算するのではなく一度に処理することで高速化が可能となる． Python♪ディープラーニングを高速化するバッチ処理とは ディープラーニングではバッチ処理という方法が使えます。難しそうに聞こえますが、バッチ処理とは「データをまとめて計算する処理」のことです。そして、まとめて計算することで速くなります。具体例によりバッチ処理の概要を説明し、速度の比較を行います。 snowtree-injune.com . ]]></description>
-    <pubDate>Thu, 14 May 2026 14:36:43 GMT</pubDate>
+    <title>RoPE</title>
+    <link>https://issaimaru.github.io/obsidian/Secrets/research/transformer_doc/%E7%AB%B9%E5%86%85/transformer_ext%E3%81%AE%E8%A7%A3%E8%AA%AD/transformer%E3%81%AE%E5%9F%BA%E7%A4%8E%E7%9F%A5%E8%AD%98/RoPE</link>
+    <guid>https://issaimaru.github.io/obsidian/Secrets/research/transformer_doc/%E7%AB%B9%E5%86%85/transformer_ext%E3%81%AE%E8%A7%A3%E8%AA%AD/transformer%E3%81%AE%E5%9F%BA%E7%A4%8E%E7%9F%A5%E8%AD%98/RoPE</guid>
+    <description><![CDATA[ トークンの順序や位置を区別するために，入力トークン埋め込みに対して付加する位置符号の一種 偶数・奇数の次元ペアごとに回転をかけるという特徴がある(2ペアずつ) RoPE（Rotary Positional Embedding）とは｜澁谷直樹 論文「RoFormer : Enhanced Transformer With Rotary Position Embedding」（2021年）では、位置埋め込みを回転として表現することで、Transformer（トランスフォーマー）の性能を向上させる手法が提案されました。 このアプローチはその後、Llamaをはじめとする大規模言語モデルにも採用され、現... ]]></description>
+    <pubDate>Wed, 20 May 2026 01:41:48 GMT</pubDate>
   </item>
     </channel>
   </rss>
