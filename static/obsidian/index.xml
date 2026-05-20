@@ -10,7 +10,7 @@
     <link>https://issaimaru.github.io/obsidian/Secrets/research/transformer_doc/%E7%AB%B9%E5%86%85/%E3%83%9F%E3%83%BC%E3%83%86%E3%82%A3%E3%83%B3%E3%82%B0%E8%B3%87%E6%96%99(5%E6%9C%8820%E6%97%A5)</link>
     <guid>https://issaimaru.github.io/obsidian/Secrets/research/transformer_doc/%E7%AB%B9%E5%86%85/%E3%83%9F%E3%83%BC%E3%83%86%E3%82%A3%E3%83%B3%E3%82%B0%E8%B3%87%E6%96%99(5%E6%9C%8820%E6%97%A5)</guid>
     <description><![CDATA[ transformerのコードについて アーキテクチャ Transclude of アーキテクチャ テストベンチの動作 Transclude of テストベンチ NUM_COLSとUNITS_PER_COLSによる回路規模の違い FPGAに実装できる回路規模とするために，NUM_UNITSを極力小さくすることが目標? Transclude of NUM_COLSとUNITS_PER_COLSによる回路規模の違い 現在の最小MACアレイユニット NUM_UNITS = 8が最小で，これ未満だとテストベンチが合わない(2x2でも) Running TEST IDが0~8までは成功 Running ... ]]></description>
-    <pubDate>Wed, 20 May 2026 03:41:11 GMT</pubDate>
+    <pubDate>Wed, 20 May 2026 03:50:06 GMT</pubDate>
   </item><item>
     <title>テストベンチ</title>
     <link>https://issaimaru.github.io/obsidian/Secrets/research/transformer_doc/%E7%AB%B9%E5%86%85/transformer_ext%E3%81%AE%E8%A7%A3%E8%AA%AD/%E3%83%86%E3%82%B9%E3%83%88%E3%83%99%E3%83%B3%E3%83%81</link>
