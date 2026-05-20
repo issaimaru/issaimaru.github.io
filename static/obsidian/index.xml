@@ -6,6 +6,12 @@
       <description>Last 10 notes on issaimaru&#039;s Obsidian Pages</description>
       <generator>Quartz -- quartz.jzhao.xyz</generator>
       <item>
+    <title>アーキテクチャ</title>
+    <link>https://issaimaru.github.io/obsidian/Secrets/research/transformer_doc/%E7%AB%B9%E5%86%85/transformer_ext%E3%81%AE%E8%A7%A3%E8%AA%AD/%E3%82%A2%E3%83%BC%E3%82%AD%E3%83%86%E3%82%AF%E3%83%81%E3%83%A3</link>
+    <guid>https://issaimaru.github.io/obsidian/Secrets/research/transformer_doc/%E7%AB%B9%E5%86%85/transformer_ext%E3%81%AE%E8%A7%A3%E8%AA%AD/%E3%82%A2%E3%83%BC%E3%82%AD%E3%83%86%E3%82%AF%E3%83%81%E3%83%A3</guid>
+    <description><![CDATA[ ⚠ Switch to EXCALIDRAW VIEW in the MORE OPTIONS menu of this document. ]]></description>
+    <pubDate>Wed, 20 May 2026 02:40:07 GMT</pubDate>
+  </item><item>
     <title>Connect elements</title>
     <link>https://issaimaru.github.io/obsidian/Secrets/research/transformer_doc/Excalidraw/Scripts/Downloaded/Connect-elements</link>
     <guid>https://issaimaru.github.io/obsidian/Secrets/research/transformer_doc/Excalidraw/Scripts/Downloaded/Connect-elements</guid>
@@ -58,12 +64,6 @@
     <link>https://issaimaru.github.io/obsidian/Secrets/research/transformer_doc/%E7%AB%B9%E5%86%85/transformer_ext%E3%81%AE%E8%A7%A3%E8%AA%AD/C2RTL%E7%94%A8%E8%AA%9E</link>
     <guid>https://issaimaru.github.io/obsidian/Secrets/research/transformer_doc/%E7%AB%B9%E5%86%85/transformer_ext%E3%81%AE%E8%A7%A3%E8%AA%AD/C2RTL%E7%94%A8%E8%AA%9E</guid>
     <description><![CDATA[ #define _BW(N) __attribute__((C2RTL_bit_width(N))) #define _T(N) __attribute__((C2RTL_type(N))) #define _TOP(N) __attribute__((C2RTL_top_function(N))) typedef unsigned short UINT16 _BW(16), UINT10 _BW(10); typedef signed short SINT16 _BW(16), SINT10 _BW(10); typedef UINT16 ST_UINT16 _T(state), M_UIN... ]]></description>
-    <pubDate>Wed, 20 May 2026 01:46:49 GMT</pubDate>
-  </item><item>
-    <title>NUM_COLSとUNITS_PER_COLSによる回路規模の違い</title>
-    <link>https://issaimaru.github.io/obsidian/Secrets/research/transformer_doc/%E7%AB%B9%E5%86%85/transformer_ext%E3%81%AE%E8%A7%A3%E8%AA%AD/NUM_COLS%E3%81%A8UNITS_PER_COLS%E3%81%AB%E3%82%88%E3%82%8B%E5%9B%9E%E8%B7%AF%E8%A6%8F%E6%A8%A1%E3%81%AE%E9%81%95%E3%81%84</link>
-    <guid>https://issaimaru.github.io/obsidian/Secrets/research/transformer_doc/%E7%AB%B9%E5%86%85/transformer_ext%E3%81%AE%E8%A7%A3%E8%AA%AD/NUM_COLS%E3%81%A8UNITS_PER_COLS%E3%81%AB%E3%82%88%E3%82%8B%E5%9B%9E%E8%B7%AF%E8%A6%8F%E6%A8%A1%E3%81%AE%E9%81%95%E3%81%84</guid>
-    <description><![CDATA[  UNITS_PER_COLNUM_COLSTotal nodesTotal gatespipeRegsCombined gates481277602310872.0525642536578.044916851424641.0348181597092.528931021452894.0348511639054.02462350899780.0260781053297.0transformer_ext.hでコメントアウトされていたC2RTLの出力から取ってきた 表からわかること UNITS_PER_COLとNUM_COLSの値が大きくなるほど回路規模も大きくなる(当たり前) NUM_UNITS=... ]]></description>
     <pubDate>Wed, 20 May 2026 01:46:49 GMT</pubDate>
   </item>
     </channel>
