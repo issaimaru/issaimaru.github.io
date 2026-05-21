@@ -6,6 +6,12 @@
       <description>Last 10 notes on issaimaru&#039;s Obsidian Pages</description>
       <generator>Quartz -- quartz.jzhao.xyz</generator>
       <item>
+    <title>RISC-V CPUにおける高速化手法</title>
+    <link>https://issaimaru.github.io/obsidian/Hardware/RISC-V-CPU%E3%81%AB%E3%81%8A%E3%81%91%E3%82%8B%E9%AB%98%E9%80%9F%E5%8C%96%E6%89%8B%E6%B3%95</link>
+    <guid>https://issaimaru.github.io/obsidian/Hardware/RISC-V-CPU%E3%81%AB%E3%81%8A%E3%81%91%E3%82%8B%E9%AB%98%E9%80%9F%E5%8C%96%E6%89%8B%E6%B3%95</guid>
+    <description><![CDATA[ 目的 2026年度コンピューター論理設計のProcessor Design Contestのため ベースとなるプロセッサ 実行するコード /***************************************************************/ /** program for CLD design contest 2023 (Version 2023-05-14a) **/ /** do not modify this code **/ /***************************************************************/ i... ]]></description>
+    <pubDate>Thu, 21 May 2026 01:00:12 GMT</pubDate>
+  </item><item>
     <title>ミーティング資料(5月20日)</title>
     <link>https://issaimaru.github.io/obsidian/Secrets/research/transformer_doc/%E7%AB%B9%E5%86%85/%E3%83%9F%E3%83%BC%E3%83%86%E3%82%A3%E3%83%B3%E3%82%B0%E8%B3%87%E6%96%99(5%E6%9C%8820%E6%97%A5)</link>
     <guid>https://issaimaru.github.io/obsidian/Secrets/research/transformer_doc/%E7%AB%B9%E5%86%85/%E3%83%9F%E3%83%BC%E3%83%86%E3%82%A3%E3%83%B3%E3%82%B0%E8%B3%87%E6%96%99(5%E6%9C%8820%E6%97%A5)</guid>
@@ -58,12 +64,6 @@
     <link>https://issaimaru.github.io/obsidian/Secrets/research/transformer_doc/%E7%AB%B9%E5%86%85/LLM%E3%81%AE%E8%A6%8B%E8%A7%A3/transformer_ext_analysis</link>
     <guid>https://issaimaru.github.io/obsidian/Secrets/research/transformer_doc/%E7%AB%B9%E5%86%85/LLM%E3%81%AE%E8%A6%8B%E8%A7%A3/transformer_ext_analysis</guid>
     <description><![CDATA[ transformer_ext.h 計算部分・正規化処理の徹底解説 ― NUM_UNITS依存性の全列挙と NUM_UNITS=4 における失敗原因分析 ― 目次 全体アーキテクチャ概要 前提知識：Block Floating Point (BFP) MAC（積和）演算の理論と実装 正規化処理（ExpNorm） RMSNorm・Softmax・RoPE NUM_UNITSが演算結果に影響する箇所の全列挙 各箇所の徹底解説 テストログの分析 原因分析 正確性の自己評価 第1章：全体アーキテクチャ概要 1.1 システムの目的 本コードは、Transformerモデルの推論をハードウェア（FPGA等... ]]></description>
-    <pubDate>Wed, 20 May 2026 01:46:49 GMT</pubDate>
-  </item><item>
-    <title>transformer_ext_analysis_v2</title>
-    <link>https://issaimaru.github.io/obsidian/Secrets/research/transformer_doc/%E7%AB%B9%E5%86%85/LLM%E3%81%AE%E8%A6%8B%E8%A7%A3/transformer_ext_analysis_v2</link>
-    <guid>https://issaimaru.github.io/obsidian/Secrets/research/transformer_doc/%E7%AB%B9%E5%86%85/LLM%E3%81%AE%E8%A6%8B%E8%A7%A3/transformer_ext_analysis_v2</guid>
-    <description><![CDATA[ transformer_ext.h 徹底解析レポート（改訂版 v2） NUM_UNITS=4 における計算・正規化処理の全依存箇所と根本原因分析 目次 前提知識 NUM_UNITS=4 における全定数導出 NUM_UNITS依存箇所の全列挙と詳細解説 テストログの詳細パターン分析 根本原因分析 正確性の自己評価 1. ]]></description>
     <pubDate>Wed, 20 May 2026 01:46:49 GMT</pubDate>
   </item>
     </channel>
