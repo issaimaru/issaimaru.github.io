@@ -10,7 +10,7 @@
     <link>https://issaimaru.github.io/obsidian/Technical-Terms/%E3%82%A4%E3%83%B3%E3%82%AA%E3%83%BC%E3%83%80%E3%83%BC%E3%82%B9%E3%83%BC%E3%83%91%E3%83%BC%E3%82%B9%E3%82%AB%E3%83%A9%E3%81%AE%E3%83%8F%E3%82%B6%E3%83%BC%E3%83%89</link>
     <guid>https://issaimaru.github.io/obsidian/Technical-Terms/%E3%82%A4%E3%83%B3%E3%82%AA%E3%83%BC%E3%83%80%E3%83%BC%E3%82%B9%E3%83%BC%E3%83%91%E3%83%BC%E3%82%B9%E3%82%AB%E3%83%A9%E3%81%AE%E3%83%8F%E3%82%B6%E3%83%BC%E3%83%89</guid>
     <description><![CDATA[ アウトオブオーダースーパースカラだともっとあるよ パイプラインと同様に，データハザード，構造ハザード，制御ハザードの3つに分類することができる． 構造ハザード コンピュータの資源が有限なことに起因するハザード 例えばメモリが1サイクルあたりに複数のアドレスにアクセスできないことによるハザードなど データハザード Read After Write(RAW) 先行命令Aの結果を後続命令Bが使用する場合命令Aと命令Bは同時に実行できない A: add x3, x1, x2 (x1+x2をx3に入れる) B: add x4, x1, x3 (x1+x3をx4に入れる) この場合はデータの依存関係から，... ]]></description>
-    <pubDate>Sat, 23 May 2026 06:20:04 GMT</pubDate>
+    <pubDate>Sat, 23 May 2026 06:30:05 GMT</pubDate>
   </item><item>
     <title>RISC-V CPUにおける高速化手法</title>
     <link>https://issaimaru.github.io/obsidian/Share/CLD/RISC-V-CPU%E3%81%AB%E3%81%8A%E3%81%91%E3%82%8B%E9%AB%98%E9%80%9F%E5%8C%96%E6%89%8B%E6%B3%95</link>
