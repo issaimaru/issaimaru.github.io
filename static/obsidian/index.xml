@@ -6,6 +6,12 @@
       <description>Last 10 notes on issaimaru&#039;s Obsidian Pages</description>
       <generator>Quartz -- quartz.jzhao.xyz</generator>
       <item>
+    <title>スーパースカラのハザード</title>
+    <link>https://issaimaru.github.io/obsidian/Technical-Terms/%E3%82%B9%E3%83%BC%E3%83%91%E3%83%BC%E3%82%B9%E3%82%AB%E3%83%A9%E3%81%AE%E3%83%8F%E3%82%B6%E3%83%BC%E3%83%89</link>
+    <guid>https://issaimaru.github.io/obsidian/Technical-Terms/%E3%82%B9%E3%83%BC%E3%83%91%E3%83%BC%E3%82%B9%E3%82%AB%E3%83%A9%E3%81%AE%E3%83%8F%E3%82%B6%E3%83%BC%E3%83%89</guid>
+    <description><![CDATA[ パイプラインと同様に，データハザード，構造ハザード，制御ハザードの3つに分類することができる． 構造ハザード コンピュータの資源が有限なことに起因するハザード 例えばメモリが1サイクルあたりに複数のアドレスにアクセスできないことによるハザードなど データハザード A: add x3, x1, x2 (x1+x2をx3に入れる) B: add x4, x1, x3 (x1+x3をx4に入れる) . ]]></description>
+    <pubDate>Sat, 23 May 2026 06:10:05 GMT</pubDate>
+  </item><item>
     <title>RISC-V CPUにおける高速化手法</title>
     <link>https://issaimaru.github.io/obsidian/Share/CLD/RISC-V-CPU%E3%81%AB%E3%81%8A%E3%81%91%E3%82%8B%E9%AB%98%E9%80%9F%E5%8C%96%E6%89%8B%E6%B3%95</link>
     <guid>https://issaimaru.github.io/obsidian/Share/CLD/RISC-V-CPU%E3%81%AB%E3%81%8A%E3%81%91%E3%82%8B%E9%AB%98%E9%80%9F%E5%8C%96%E6%89%8B%E6%B3%95</guid>
@@ -58,12 +64,6 @@
     <link>https://issaimaru.github.io/obsidian/Secrets/research/transformer_doc/%E5%9C%9F%E6%A9%8B/transformer/llama2.c/model.py</link>
     <guid>https://issaimaru.github.io/obsidian/Secrets/research/transformer_doc/%E5%9C%9F%E6%A9%8B/transformer/llama2.c/model.py</guid>
     <description><![CDATA[ PyTorchという機械学習フレームワークを使って、Llama 2の「脳」の構造（ニューラルネットワーク）そのものを定義しているファイルです。 主な役割: Llama 2が文章を理解し生成するための計算手順（Transformerアーキテクチャ）が書かれています。 重要な構成要素: ModelArgs: モデルの大きさや層の数などの設定（ハイパーパラメータ）をまとめています。 Attention / TransformerBlock: 文章の文脈を理解するための「アテンション機構」と呼ばれるAIの核となる処理が書かれています。 generate: 実際に与えられた単語の続きを予測し、文章を生成... ]]></description>
-    <pubDate>Wed, 20 May 2026 01:46:49 GMT</pubDate>
-  </item><item>
-    <title>transformer_ext_analysis</title>
-    <link>https://issaimaru.github.io/obsidian/Secrets/research/transformer_doc/%E7%AB%B9%E5%86%85/LLM%E3%81%AE%E8%A6%8B%E8%A7%A3/transformer_ext_analysis</link>
-    <guid>https://issaimaru.github.io/obsidian/Secrets/research/transformer_doc/%E7%AB%B9%E5%86%85/LLM%E3%81%AE%E8%A6%8B%E8%A7%A3/transformer_ext_analysis</guid>
-    <description><![CDATA[ transformer_ext.h 計算部分・正規化処理の徹底解説 ― NUM_UNITS依存性の全列挙と NUM_UNITS=4 における失敗原因分析 ― 目次 全体アーキテクチャ概要 前提知識：Block Floating Point (BFP) MAC（積和）演算の理論と実装 正規化処理（ExpNorm） RMSNorm・Softmax・RoPE NUM_UNITSが演算結果に影響する箇所の全列挙 各箇所の徹底解説 テストログの分析 原因分析 正確性の自己評価 第1章：全体アーキテクチャ概要 1.1 システムの目的 本コードは、Transformerモデルの推論をハードウェア（FPGA等... ]]></description>
     <pubDate>Wed, 20 May 2026 01:46:49 GMT</pubDate>
   </item>
     </channel>
