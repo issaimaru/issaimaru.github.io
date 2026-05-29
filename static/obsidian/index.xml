@@ -9,8 +9,8 @@
     <title>高位合成とC2RTLの違い</title>
     <link>https://issaimaru.github.io/obsidian/Hardware/%E9%AB%98%E4%BD%8D%E5%90%88%E6%88%90%E3%81%A8C2RTL%E3%81%AE%E9%81%95%E3%81%84</link>
     <guid>https://issaimaru.github.io/obsidian/Hardware/%E9%AB%98%E4%BD%8D%E5%90%88%E6%88%90%E3%81%A8C2RTL%E3%81%AE%E9%81%95%E3%81%84</guid>
-    <description><![CDATA[ 高位合成 論理回路の高位合成について - Qiita はじめに この記事ではFPGA等の論理回路の設計手法の一つのカテゴリーである「高位合成」について概略を説明したいと思います。ただし、筆者の知る限りでも高位合成についてはさまざまな立場の人が各時代の視点で色々なことを語っているので、この記事もそんな中の一つの解釈を述べてるだ.. ]]></description>
-    <pubDate>Fri, 29 May 2026 08:00:05 GMT</pubDate>
+    <description><![CDATA[ 高位合成 void sum_hls(float a, float b, float c, float d, float &amp;dout) { dout = a + b + c + d; } というコードがあった場合， 与えられたC,C++コードを解析して，アルゴリズムを複数の演算要素に分解 (アセンブリング) し、それら要素の演算とデータパスのグラフとして、全体を捉え直す．（③の図） ユーザーが選んだデバイスのテクノロジーリソース情報 (論理セルやマクロの遅延情報, etc.) を元に、FPGA リソースを各演算へマップ(②のリソースアロケーション) ユーザーが与えた目標の周波数に適合する... ]]></description>
+    <pubDate>Fri, 29 May 2026 08:10:04 GMT</pubDate>
   </item><item>
     <title>インオーダースーパースカラのハザード</title>
     <link>https://issaimaru.github.io/obsidian/Hardware/%E3%82%A4%E3%83%B3%E3%82%AA%E3%83%BC%E3%83%80%E3%83%BC%E3%82%B9%E3%83%BC%E3%83%91%E3%83%BC%E3%82%B9%E3%82%AB%E3%83%A9%E3%81%AE%E3%83%8F%E3%82%B6%E3%83%BC%E3%83%89</link>
