@@ -1,0 +1,8 @@
+{{ $context := .context }}
+{{ $limit := $context.Site.Params.homepage.showRecentItems | default 6 }}
+{{ $pages := where $context.Site.RegularPages "Type" "in" $context.Site.Params.mainSections }}
+{{ range $index, $page := $pages.ByDate.Reverse }}
+<div class="recent-item" data-source="{{ .Params.source | default "local" }}"{{ if ge $index $limit }} hidden{{ end }}>
+  {{ if $.cards }}{{ partial "article-link/card.html" . }}{{ else }}{{ partial "article-link/simple.html" . }}{{ end }}
+</div>
+{{ end }}

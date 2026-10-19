@@ -14,7 +14,7 @@ enableCodeCopy = true
 
 replyByEmail = false
 
-mainSections = ["ブログ"]
+mainSections = ["portfolio", "posts", "external"]
 # robots = ""
 
 disableImageOptimization = false
@@ -46,8 +46,8 @@ smartTOCHideUnfocusedChildren = false
 [homepage]
   layout = "hero" # valid options: page, profile, hero, card, background, custom
   homepageImage = "img/rain.svg" # used in: hero, and card
-  showRecent = false
-  showRecentItems = 2
+  showRecent = true
+  showRecentItems = 6
   showMoreLink = false
   showMoreLinkDest = "/posts/"
   cardView = true
@@ -90,7 +90,7 @@ smartTOCHideUnfocusedChildren = false
   layoutBackgroundBlur = true # only used when heroStyle equals background or thumbAndBackground
   layoutBackgroundHeaderSpace = false # only used when heroStyle equals background
   showBreadcrumbs = false
-  showSummary = false
+  showSummary = true
   showViews = false
   showLikes = false
   showTableOfContents = true

@@ -1,6 +1,6 @@
 ---
 title: "warden"
-description: "学生ロボコン用の基板を製作しました．"
+description: "リポ電池の各セル電圧を監視し、異常時に電源を遮断する保護基板。"
 date: 2026-02-10
 tags: ["Robocon"]
 ---

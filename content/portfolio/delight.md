@@ -1,6 +1,6 @@
 ---
 title: "delight"
-description: "学生ロボコン用の基板を製作しました．"
+description: "8個の1D LiDARを制御する、学生ロボコン用の基板。"
 date: 2026-02-10
 tags: ["Robocon"]
 ---

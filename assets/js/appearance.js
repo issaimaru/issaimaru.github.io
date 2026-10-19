@@ -14,11 +14,15 @@ if (document.documentElement.getAttribute("data-auto-appearance") === "true") {
     document.documentElement.classList.add("dark");
   }
   window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", (event) => {
+    // A choice made with the theme switcher takes priority over the OS setting.
+    if (localStorage.getItem("appearance") !== null) return;
     if (event.matches) {
       document.documentElement.classList.add("dark");
     } else {
       document.documentElement.classList.remove("dark");
     }
+    updateMeta();
+    window.updateLogo?.(getTargetAppearance());
   });
 }
 

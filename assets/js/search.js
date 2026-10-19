@@ -1,186 +1,144 @@
-var fuse;
-var showButton = document.getElementById("search-button");
-var showButtonMobile = document.getElementById("search-button-mobile");
-var hideButton = document.getElementById("close-search-button");
-var wrapper = document.getElementById("search-wrapper");
-var modal = document.getElementById("search-modal");
-var input = document.getElementById("search-query");
-var output = document.getElementById("search-results");
-var first = output.firstChild;
-var last = output.lastChild;
-var searchVisible = false;
-var indexed = false;
-var hasResults = false;
+// Use Blowfish's existing Fuse index and search modal.
+(() => {
+  const wrapper = document.getElementById("search-wrapper");
+  const modal = document.getElementById("search-modal");
+  const input = document.getElementById("search-query");
+  const output = document.getElementById("search-results");
+  const closeButton = document.getElementById("close-search-button");
+  const status = document.getElementById("search-status");
+  if (!wrapper || !modal || !input || !output || !closeButton) return;
 
-// Listen for events
-showButton? showButton.addEventListener("click", displaySearch) : null;
-showButtonMobile? showButtonMobile.addEventListener("click", displaySearch) : null;
-hideButton.addEventListener("click", hideSearch);
-wrapper.addEventListener("click", hideSearch);
-modal.addEventListener("click", function (event) {
-  event.stopPropagation();
-  event.stopImmediatePropagation();
-  return false;
-});
-document.addEventListener("keydown", function (event) {
-  // Forward slash to open search wrapper
-  if (event.key == "/") {
-    if (!searchVisible) {
-      event.preventDefault();
-      displaySearch();
+  let fuse;
+  let indexPromise;
+  let visible = false;
+  let opener;
+  let previousOverflow = "";
+  const prompt = "記事・作品のタイトルやキーワードを入力してください。";
+  const announce = message => { if (status) status.textContent = message; };
+
+  function executeQuery() {
+    output.replaceChildren();
+    const term = input.value.trim();
+    if (!fuse) return;
+    if (!term) {
+      announce(prompt);
+      return;
+    }
+    const results = fuse.search(term, { limit: 20 });
+    announce(results.length ? `${results.length}件の検索結果` : "見つかりませんでした。別のキーワードを試してください。");
+    for (const { item } of results) {
+      const li = document.createElement("li");
+      li.className = "mb-2";
+      const link = document.createElement("a");
+      link.className = "flex items-center px-3 py-2 rounded-md appearance-none bg-neutral-100 dark:bg-neutral-700 focus:bg-primary-100 hover:bg-primary-100 dark:hover:bg-primary-900 dark:focus:bg-primary-900";
+      link.href = item.externalUrl || item.permalink;
+      if (item.externalUrl) { link.target = "_blank"; link.rel = "noopener noreferrer"; }
+      const content = document.createElement("div");
+      content.className = "grow min-w-0";
+      const title = document.createElement("div");
+      title.className = "text-lg font-bold";
+      title.textContent = item.title;
+      const meta = document.createElement("div");
+      meta.className = "text-sm text-neutral-500 dark:text-neutral-400";
+      meta.textContent = [item.section, item.date].filter(Boolean).join(" · ");
+      const summary = document.createElement("div");
+      summary.className = "text-sm";
+      const parsed = new DOMParser().parseFromString(item.summary || "", "text/html");
+      summary.textContent = (parsed.body.textContent || "").trim().slice(0, 160);
+      content.append(title, meta, summary);
+      link.append(content);
+      li.append(link);
+      output.append(li);
     }
   }
 
-  // Esc to close search wrapper
-  if (event.key == "Escape") {
-    hideSearch();
+  function buildIndex() {
+    if (fuse) { executeQuery(); return; }
+    if (indexPromise) return;
+    announce("検索データを読み込んでいます…");
+    const base = wrapper.getAttribute("data-url").replace(/\/?$/, "/");
+    indexPromise = fetch(base + "index.json")
+      .then(response => {
+        if (!response.ok) throw new Error("Search index unavailable");
+        return response.json();
+      })
+      .then(data => {
+        fuse = new Fuse(data, {
+          shouldSort: true, ignoreLocation: true, threshold: 0.0,
+          keys: [ { name: "title", weight: 0.8 }, { name: "section", weight: 0.2 }, { name: "summary", weight: 0.6 }, { name: "content", weight: 0.4 } ],
+        });
+        executeQuery();
+      })
+      .catch(() => {
+        indexPromise = null;
+        announce("検索データを読み込めませんでした。検索を開き直すと再試行できます。");
+      });
   }
 
-  // Down arrow to move down results list
-  if (event.key == "ArrowDown") {
-    if (searchVisible && hasResults) {
-      event.preventDefault();
-      if (document.activeElement == input) {
-        first.focus();
-      } else if (document.activeElement == last) {
-        last.focus();
-      } else {
-        document.activeElement.parentElement.nextSibling.firstElementChild.focus();
-      }
-    }
-  }
-
-  // Up arrow to move up results list
-  if (event.key == "ArrowUp") {
-    if (searchVisible && hasResults) {
-      event.preventDefault();
-      if (document.activeElement == input) {
-        input.focus();
-      } else if (document.activeElement == first) {
-        input.focus();
-      } else {
-        document.activeElement.parentElement.previousSibling.firstElementChild.focus();
-      }
-    }
-  }
-
-  // Enter to get to results
-  if (event.key == "Enter") {
-    if (searchVisible && hasResults) {
-      event.preventDefault();
-      if (document.activeElement == input) {
-        first.focus();
-      } else {
-        document.activeElement.click();
-      }
-    }
-  }
-
-});
-
-// Update search on each keypress
-input.onkeyup = function (event) {
-  executeQuery(this.value);
-};
-
-function displaySearch() {
-  if (!indexed) {
-    buildIndex();
-  }
-  if (!searchVisible) {
+  function displaySearch() {
+    if (visible) return;
+    opener = document.activeElement;
+    previousOverflow = document.body.style.overflow;
     document.body.style.overflow = "hidden";
     wrapper.style.visibility = "visible";
+    wrapper.setAttribute("aria-hidden", "false");
+    visible = true;
     input.focus();
-    searchVisible = true;
+    buildIndex();
   }
-}
 
-function hideSearch() {
-  if (searchVisible) {
-    document.body.style.overflow = "visible";
+  function hideSearch() {
+    if (!visible) return;
+    visible = false;
+    document.body.style.overflow = previousOverflow;
     wrapper.style.visibility = "hidden";
+    wrapper.setAttribute("aria-hidden", "true");
     input.value = "";
-    output.innerHTML = "";
-    document.activeElement.blur();
-    searchVisible = false;
+    output.replaceChildren();
+    announce(prompt);
+    opener?.focus();
   }
-}
 
-function fetchJSON(path, callback) {
-  var httpRequest = new XMLHttpRequest();
-  httpRequest.onreadystatechange = function () {
-    if (httpRequest.readyState === 4) {
-      if (httpRequest.status === 200) {
-        var data = JSON.parse(httpRequest.responseText);
-        if (callback) callback(data);
-      }
+  for (const id of ["search-button", "search-button-mobile"]) {
+    document.getElementById(id)?.addEventListener("click", displaySearch);
+  }
+  closeButton.addEventListener("click", hideSearch);
+  wrapper.addEventListener("click", event => { if (event.target === wrapper) hideSearch(); });
+  input.addEventListener("input", executeQuery);
+  input.closest("form")?.addEventListener("submit", event => event.preventDefault());
+
+  document.addEventListener("keydown", event => {
+    const editing = event.target instanceof Element && event.target.closest("input, textarea, select, [contenteditable='true']");
+    const menuOpen = document.getElementById("menu-button")?.getAttribute("aria-expanded") === "true";
+    if (event.key === "/" && !visible && !editing && !menuOpen && !event.ctrlKey && !event.metaKey && !event.altKey) {
+      event.preventDefault();
+      displaySearch();
+      return;
     }
-  };
-  httpRequest.open("GET", path);
-  httpRequest.send();
-}
-
-function buildIndex() {
-  var baseURL = wrapper.getAttribute("data-url");
-  baseURL = baseURL.replace(/\/?$/, '/');
-  fetchJSON(baseURL + "index.json", function (data) {
-    var options = {
-      shouldSort: true,
-      ignoreLocation: true,
-      threshold: 0.0,
-      includeMatches: true,
-      keys: [
-        { name: "title", weight: 0.8 },
-        { name: "section", weight: 0.2 },
-        { name: "summary", weight: 0.6 },
-        { name: "content", weight: 0.4 },
-      ],
-    };
-    /*var finalIndex = [];
-    for (var i in data) {
-      if(data[i].type != "users" && data[i].type != "tags" && data[i].type != "categories"){
-        finalIndex.push(data[i]);
-      }
-    }*/
-    fuse = new Fuse(data, options);
-    indexed = true;
+    if (!visible) return;
+    if (event.key === "Escape") {
+      event.preventDefault();
+      hideSearch();
+      return;
+    }
+    if (event.key === "Tab") {
+      const items = Array.from(modal.querySelectorAll("input, button, a[href]")).filter(item => item.getClientRects().length);
+      const first = items[0];
+      const last = items[items.length - 1];
+      if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last.focus(); }
+      else if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first.focus(); }
+    }
+    const links = Array.from(output.querySelectorAll("a"));
+    const index = links.indexOf(document.activeElement);
+    if (event.key === "ArrowDown" && links.length && (document.activeElement === input || index >= 0)) {
+      event.preventDefault();
+      links[Math.min(index + 1, links.length - 1)].focus();
+    } else if (event.key === "ArrowUp" && index >= 0) {
+      event.preventDefault();
+      (index === 0 ? input : links[index - 1]).focus();
+    } else if (event.key === "Enter" && document.activeElement === input && links.length) {
+      event.preventDefault();
+      links[0].focus();
+    }
   });
-}
-
-function executeQuery(term) {
-  let results = fuse.search(term);
-  let resultsHTML = "";
-
-  if (results.length > 0) {
-    results.forEach(function (value, key) {
-      var title = value.item.externalUrl?  value.item.title + '<span class="text-xs ml-2 align-center cursor-default text-neutral-400 dark:text-neutral-500">'+value.item.externalUrl+'</span>' : value.item.title;
-      var linkconfig = value.item.externalUrl? 'target="_blank" rel="noopener" href="'+value.item.externalUrl+'"' : 'href="'+value.item.permalink+'"';
-      resultsHTML =
-        resultsHTML +
-        `<li class="mb-2">
-          <a class="flex items-center px-3 py-2 rounded-md appearance-none bg-neutral-100 dark:bg-neutral-700 focus:bg-primary-100 hover:bg-primary-100 dark:hover:bg-primary-900 dark:focus:bg-primary-900 focus:outline-dotted focus:outline-transparent focus:outline-2" 
-          ${linkconfig} tabindex="0">
-            <div class="grow">
-              <div class="-mb-1 text-lg font-bold">
-                ${title}
-              </div>
-              <div class="text-sm text-neutral-500 dark:text-neutral-400">${value.item.section}<span class="px-2 text-primary-500">&middot;</span>${value.item.date? value.item.date : ""}</span></div>
-              <div class="text-sm italic">${value.item.summary}</div>
-            </div>
-            <div class="ml-2 ltr:block rtl:hidden text-neutral-500">&rarr;</div>
-            <div class="mr-2 ltr:hidden rtl:block text-neutral-500">&larr;</div>
-          </a>
-        </li>`;
-    });
-    hasResults = true;
-  } else {
-    resultsHTML = "";
-    hasResults = false;
-  }
-
-  output.innerHTML = resultsHTML;
-  if (results.length > 0) {
-    first = output.firstChild.firstElementChild;
-    last = output.lastChild.firstElementChild;
-  }
-}
+})();

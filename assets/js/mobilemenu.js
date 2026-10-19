@@ -1,33 +1,61 @@
-var menuButton = document.getElementById("menu-button");
-var menuCloseButton = document.getElementById("menu-close-button");
-var menuWrapper = document.getElementById("menu-wrapper");
+// Keep Blowfish's menu, with keyboard and focus handling for its overlay.
+(() => {
+  const button = document.getElementById("menu-button");
+  const closeButton = document.getElementById("menu-close-button");
+  const wrapper = document.getElementById("menu-wrapper");
+  if (!button || !closeButton || !wrapper) return;
 
-var menuOpen = false;
+  let open = false;
+  let previousOverflow = "";
 
-var openMenu = function (e) {
-  if (!menuOpen) {
-    menuOpen = true;
+  function closeMenu() {
+    if (!open) return;
+    open = false;
+    document.body.style.overflowY = previousOverflow;
+    button.style.visibility = "visible";
+    button.setAttribute("aria-expanded", "false");
+    wrapper.style.visibility = "hidden";
+    wrapper.style.opacity = "0";
+    wrapper.setAttribute("aria-hidden", "true");
+    button.focus();
+  }
+
+  button.addEventListener("click", () => {
+    if (open) return;
+    open = true;
+    previousOverflow = document.body.style.overflowY;
     document.body.style.overflowY = "hidden";
-    menuButton.style.visibility = "hidden";
-    menuWrapper.style.visibility = "visible";
-    menuWrapper.style.opacity = "1";
-    window.onbeforeunload = function (event) {
-      closeMenu()
+    button.style.visibility = "hidden";
+    button.setAttribute("aria-expanded", "true");
+    wrapper.style.visibility = "visible";
+    wrapper.style.opacity = "1";
+    wrapper.setAttribute("aria-hidden", "false");
+    closeButton.focus();
+  });
+
+  closeButton.addEventListener("click", closeMenu);
+  wrapper.addEventListener("click", event => {
+    if (event.target === wrapper || event.target.closest("a")) closeMenu();
+  });
+  document.addEventListener("keydown", event => {
+    if (!open) return;
+    if (event.key === "Escape") {
+      event.preventDefault();
+      closeMenu();
     }
-  }
-};
-
-var closeMenu = function (e) {
-  if (menuOpen) {
-    menuOpen = false;
-    document.body.style.overflowY = "auto";
-    menuButton.style.visibility = "visible";
-    menuWrapper.style.visibility = "hidden";
-    menuWrapper.style.opacity = "0";
-    window.onbeforeunload = function (event) { }
-    e.stopPropagation();
-  }
-}
-
-menuButton.addEventListener("click", openMenu);
-menuCloseButton.addEventListener("click", closeMenu);
+    if (event.key === "Tab") {
+      const items = Array.from(wrapper.querySelectorAll("a[href], button")).filter(item => item.getClientRects().length);
+      const first = items[0];
+      const last = items[items.length - 1];
+      if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault();
+        last.focus();
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault();
+        first.focus();
+      }
+    }
+  });
+  window.addEventListener("resize", () => { if (window.innerWidth >= 768) closeMenu(); });
+  window.addEventListener("pagehide", closeMenu);
+})();

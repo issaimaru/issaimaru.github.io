@@ -21,6 +21,8 @@ resources/
 
 #others
 node_modules
+__pycache__/
+*.pyc
 .hugo_build.lock
 
 # OS generated files

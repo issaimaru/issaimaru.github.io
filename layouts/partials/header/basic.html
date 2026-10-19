@@ -24,9 +24,7 @@
         <nav class="flex space-x-3">
 
             {{ if not .Site.Params.disableTextInHeader | default true }}
-            <a href="{{ "" | relLangURL }}" class="text-base font-medium text-gray-500 hover:text-gray-900">{{
-                .Site.Title | markdownify
-                }}</a>
+            <a href="{{ "" | relLangURL }}" class="text-base font-medium text-gray-500 hover:text-gray-900"><span class="site-title-full">{{ .Site.Title | markdownify }}</span><span class="site-title-short">{{ .Site.Params.Author.name | default .Site.Title }}</span></a>
             {{ end }}
 
         </nav>
@@ -51,7 +49,7 @@
             {{/* Appearance switch */}}
             {{ if .Site.Params.footer.showAppearanceSwitcher | default false }}
             <div
-                class="{{ if .Site.Params.footer.showScrollToTop | default true -}} ltr:mr-14 rtl:ml-14 {{- end }} flex items-center">
+                class="header-appearance {{ if .Site.Params.footer.showScrollToTop | default true -}} ltr:mr-14 rtl:ml-14 {{- end }} flex items-center">
                 <button id="appearance-switcher" aria-label="Dark mode switcher" type="button" class="text-base hover:text-primary-600 dark:hover:text-primary-400">
                     <div class="flex items-center justify-center dark:hidden">
                         {{ partial "icon.html" "moon" }}
@@ -93,22 +91,23 @@
     </div>
     <div class="-my-2 -mr-2 md:hidden">
 
-        <label id="menu-button" class="block">
+        <div class="block">
             {{ if .Site.Menus.main }}
-            <div class="cursor-pointer hover:text-primary-600 dark:hover:text-primary-400">
+            <button id="menu-button" type="button" aria-label="メニューを開く" aria-expanded="false" aria-controls="menu-wrapper" aria-haspopup="dialog" class="cursor-pointer hover:text-primary-600 dark:hover:text-primary-400">
                 {{ partial "icon.html" "bars" }}
-            </div>
+            </button>
             <div id="menu-wrapper" style="padding-top:5px;"
+                role="dialog" aria-modal="true" aria-label="メインメニュー" aria-hidden="true" tabindex="-1"
                 class="fixed inset-0 z-30 invisible w-screen h-screen m-0 overflow-auto transition-opacity opacity-0 cursor-default bg-neutral-100/50 backdrop-blur-sm dark:bg-neutral-900/50">
                 <ul
                     class="flex space-y-2 mt-3 flex-col items-end w-full px-6 py-6 mx-auto overflow-visible list-none ltr:text-right rtl:text-left max-w-7xl">
 
-                    <li id="menu-close-button">
-                        <span
+                    <li>
+                        <button id="menu-close-button" type="button" aria-label="メニューを閉じる"
                             class="cursor-pointer inline-block align-text-bottom hover:text-primary-600 dark:hover:text-primary-400">{{
                             partial
                             "icon.html"
-                            "xmark" }}</span>
+                            "xmark" }}</button>
                     </li>
 
                     {{ range .Site.Menus.main }}
@@ -145,7 +144,7 @@
                 {{ end }}
 
             </div>
-        </label>
+        </div>
     </div>
 </div>
 

@@ -10,15 +10,26 @@ on:
     - assets/**
     - config/**
     - content/**
+    - data/**
+    - layouts/**
+    - scripts/**
+    - tests/**
     - static/**
 
   workflow_dispatch:
+
+  schedule:
+    # UTC: 00:17, 06:17, 12:17, 18:17 (JST: 09:17, 15:17, 21:17, 03:17).
+    - cron: '17 */6 * * *'
+
+permissions:
+  contents: write
 
 jobs:
   deploy-portfolio:
     runs-on: ubuntu-24.04
     concurrency:
-      group: ${{ github.workflow }}-${{ github.ref }}
+      group: portfolio-pages
       cancel-in-progress: true
     env:
       TZ: Asia/Tokyo
@@ -26,17 +37,30 @@ jobs:
     - name: Checkout Source
       uses: actions/checkout@v4
       with:
+        # Scheduled workflows run from the default branch, but publish work.
+        ref: work
         submodules: true
         fetch-depth: 0
     - name: Install Hugo
       uses: peaceiris/actions-hugo@v3
       with:
         hugo-version: 0.128.2
+    - name: Restore external article cache
+      uses: actions/cache@v5
+      with:
+        path: content/external
+        key: external-articles-${{ github.run_id }}-${{ github.run_attempt }}
+        restore-keys: |
+          external-articles-
+    - name: Test external article importer
+      run: python3 -m unittest discover -s tests -v
+    - name: Refresh Zenn and note articles
+      run: python3 scripts/fetch_external_articles.py
     - name: Build Portfolio
       run: hugo --minify --environment production
     - name: Deploy Portfolio
       uses: peaceiris/actions-gh-pages@v4
-      if: ${{ github.ref == 'refs/heads/work' }}
+      if: ${{ github.event_name == 'schedule' || github.ref == 'refs/heads/work' }}
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_branch: deploy
