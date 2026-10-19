@@ -1,7 +1,10 @@
 ---
 title: "第四回SSR杯（学内ロボコン）で1位になりました．"
+shortTitle: "BUDGET:ZERO — SSR杯 1位"
 description: "東京科学大学ロボット技術研究会の，第四回SSR杯に「BUDGET:ZERO」というチーム名で出場し，1位になりました．"
 date: 2025-09-20
+showReadingTime: false
+showDate: true
 tags: ["Robocon"]
 ---
 

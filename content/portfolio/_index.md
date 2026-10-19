@@ -1,6 +1,6 @@
 ---
 title: "Works"
 layout: portfolio
-description: "A collection of my projects and works"
+description: "回路から、ソフトウェアまで。ロボコンの基板設計、RISC-V、研究でつくったものをまとめています。"
 ---
 

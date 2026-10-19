@@ -24,6 +24,7 @@ node_modules
 __pycache__/
 *.pyc
 .hugo_build.lock
+assets/jsconfig.json
 
 # OS generated files
 .DS_Store

@@ -30,8 +30,7 @@ python3 scripts/fetch_external_articles.py
 `work` へのpushとGitHub Actionsの手動実行でも更新できます。
 
 GitHubの定期実行は**デフォルトブランチにあるワークフロー**から動きます。
-有効化には、サイトの変更を `work` に反映したうえで、このワークフローファイルを
-デフォルトブランチにも反映してください。ブランチ構成を変える必要はありません。
+このリポジトリのデフォルトブランチは `work` なので、変更を `work` にpushすると反映されます。
 GitHub上のActions実行と書き込み権限が有効になっている必要があります。
 定期実行の時刻にはGitHub側の混雑による遅延があり、公開リポジトリでは60日間の活動がないと
 定期実行が無効になるため、その場合はActions画面から再度有効にします。
@@ -44,5 +43,25 @@ RSSや画像の取得が一時的に失敗した場合は、既存のキャッ�
 
 ```bash
 python3 -m unittest discover -s tests -v
+node --test tests/parking-game.test.mjs
 hugo --minify --environment production
 ```
+
+# ホームのゲームとセクション
+
+「ぴたり、停める。」は `layouts/partials/home/parking-game.html` と
+`assets/js/parking-game.js` で実装しています。押した時間に応じて距離が増え、
+ボタンを離すと車が走ります。タッチ・マウス・Space・Enterに対応しています。
+日本時間の日付から3コースの目標・路面・風のパターンを決めます。
+路面ごとに走行距離の倍率が変わり、ボタンを離した瞬間の風が距離を増減します。
+PERFECTの許容誤差は順に±0.8m・±0.55m・±0.35mです。1走1,000点満点、
+GREAT以上の連続成功には2走目に100点・3走目に200点を加算し、合計3,300点満点です。
+3走完了時に当日の自己ベストをブラウザ内に保存します。ランキングや外部の保存先は使いません。
+結果のコピーボタンから日付・得点・判定・ゲームのURLを共有できます。
+ゲームの距離・判定ルールは `assets/js/parking-model.mjs` でテストできます。
+
+Career・Skillsの内容は `content/home-extra.md` のフロントマターで編集できます。
+見た目は `layouts/partials/home/profile-details.html`、
+Posts・Worksの一覧は `layouts/partials/archive/main.html`、
+各セクションのCSSは `assets/css/sections.css` にまとめています。
+Blowfishのベースレイアウトと記事カードを引き続き使用しています。

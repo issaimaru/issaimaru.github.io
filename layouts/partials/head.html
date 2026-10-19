@@ -45,6 +45,9 @@
   {{ if $cssCustom }}
   {{ $assets.Add "css" (slice $cssCustom) }}
   {{ end }}
+  {{ with resources.Get "css/sections.css" }}
+  {{ $assets.Add "css" (slice .) }}
+  {{ end }}
   {{ $bundleCSS := $assets.Get "css" | resources.Concat "css/main.bundle.css" | resources.Minify | resources.Fingerprint
   "sha512" }}
   <link type="text/css" rel="stylesheet" href="{{ $bundleCSS.RelPermalink }}"

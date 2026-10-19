@@ -54,6 +54,8 @@ jobs:
           external-articles-
     - name: Test external article importer
       run: python3 -m unittest discover -s tests -v
+    - name: Test parking game rules
+      run: node --test tests/parking-game.test.mjs
     - name: Refresh Zenn and note articles
       run: python3 scripts/fetch_external_articles.py
     - name: Build Portfolio

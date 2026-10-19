@@ -1,0 +1,39 @@
+{{ $works := eq .Section "portfolio" }}
+{{ $pages := .RegularPages }}
+{{ if not $works }}{{ $pages = where .Site.RegularPages "Type" "in" (slice "posts" "external") }}{{ end }}
+{{ $limit := 8 }}
+<section class="archive-page {{ if $works }}archive-works{{ else }}archive-posts{{ end }}" data-archive data-limit="{{ $limit }}">
+  <header class="archive-heading">
+    <div class="archive-heading-art" aria-hidden="true">{{ with resources.Get "img/traffic.svg" }}<img src="{{ .RelPermalink }}" alt="">{{ end }}</div>
+    <p class="section-kicker">{{ if $works }}SELECTED PROJECTS{{ else }}NOTES &amp; ARTICLES{{ end }}</p>
+    <h1>{{ .Title }}<span aria-hidden="true">.</span></h1>
+    <p class="archive-intro">{{ .Description }}</p>
+    <p class="archive-total">{{ len $pages }} {{ if $works }}projects{{ else }}articles{{ end }}<span aria-hidden="true">/</span>{{ if $works }}Circuit · Robotics · Computing{{ else }}Portfolio · Zenn · note{{ end }}</p>
+  </header>
+  <div class="archive-tools" hidden>
+    <div class="archive-filters" role="group" aria-label="{{ if $works }}制作分野{{ else }}掲載先{{ end }}で絞り込む">
+      <button type="button" data-archive-filter="all" aria-pressed="true">すべて</button>
+      {{ if $works }}
+        <button type="button" data-archive-filter="Robocon" aria-pressed="false">回路・ロボコン</button><button type="button" data-archive-filter="Research" aria-pressed="false">研究</button><button type="button" data-archive-filter="RISC-V CPU" aria-pressed="false">RISC-V</button>
+      {{ else }}
+        <button type="button" data-archive-filter="local" aria-pressed="false">このサイト</button><button type="button" data-archive-filter="Zenn" aria-pressed="false">Zenn</button><button type="button" data-archive-filter="note" aria-pressed="false">note</button>
+      {{ end }}
+    </div>
+    <label class="archive-search">{{ partial "icon.html" "search" }}<input type="search" placeholder="キーワードで探す" aria-label="{{ if $works }}作品{{ else }}記事{{ end }}をキーワードで絞り込む" autocomplete="off"></label>
+  </div>
+  <div class="archive-list-meta"><span>{{ if $works }}制作したもの{{ else }}新しい記事から{{ end }}</span><span class="archive-count" role="status" aria-live="polite">{{ len $pages }}件</span></div>
+  <div class="archive-grid">
+    {{ range $index, $page := $pages.ByDate.Reverse }}
+      <div class="archive-item" data-source="{{ if $works }}{{ delimit (.Params.tags | default slice) "|" }}{{ else }}{{ .Params.source | default "local" }}{{ end }}" data-search="{{ printf "%s %s %s" .Title .Description (delimit (.Params.tags | default slice) " ") }}"{{ if ge $index $limit }} hidden{{ end }}>{{ partial "article-link/card.html" . }}</div>
+    {{ end }}
+  </div>
+  <div class="archive-empty" hidden><h2>一致する{{ if $works }}作品{{ else }}記事{{ end }}がありません</h2><p>キーワードや絞り込み条件を変えてみてください。</p><button class="archive-clear" type="button">条件をクリア</button></div>
+  <div class="archive-footer">
+    <a class="archive-home-link" href="{{ "" | relLangURL }}">← ホームへ戻る</a>
+    <button class="archive-more" type="button" hidden>もっと見る <span aria-hidden="true">↓</span></button>
+    {{ if not $works }}<a class="archive-feed" href="{{ "index.xml" | relLangURL }}">{{ partial "icon.html" "rss" }} RSSで更新を受け取る</a>{{ end }}
+  </div>
+  <noscript><style>.archive-item[hidden]{display:block}</style></noscript>
+</section>
+{{ $js := resources.Get "js/archive.js" | resources.Minify | resources.Fingerprint "sha512" }}
+<script defer src="{{ $js.RelPermalink }}" integrity="{{ $js.Data.Integrity }}"></script>

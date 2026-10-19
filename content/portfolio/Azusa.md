@@ -2,6 +2,8 @@
 title: "Azusa"
 description: "CAN FD通信と保護回路を備えた、高専ロボコン用の統合型電源基板。"
 date: 2023-03-10
+showReadingTime: false
+showDate: true
 tags: ["Robocon"]
 ---
 

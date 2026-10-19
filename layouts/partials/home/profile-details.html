@@ -1,0 +1,18 @@
+{{ with site.GetPage "home-extra" }}
+<section class="profile-details" aria-label="経歴と使っている技術">
+  <section class="career-section" aria-labelledby="career-title">
+    <div class="profile-section-heading"><p class="section-kicker">THE JOURNEY</p><h2 id="career-title">Career<span aria-hidden="true">.</span></h2><p>回路と制御から、コンピュータの内側へ。</p></div>
+    <ol class="career-list">
+      {{ range .Params.career }}
+      <li{{ if .current }} class="career-current"{{ end }}><p class="career-period">{{ .period }}{{ if .current }}<span class="career-now">NOW</span>{{ end }}</p><h3>{{ .title }}</h3><p class="career-detail">{{ .detail }}</p></li>
+      {{ end }}
+    </ol>
+  </section>
+  <section class="skills-section" aria-labelledby="skills-title">
+    <div class="profile-section-heading"><p class="section-kicker">THE TOOLKIT</p><h2 id="skills-title">Skills<span aria-hidden="true">.</span></h2><p>日々の制作・研究で使っているもの。</p></div>
+    {{ range .Params.skillGroups }}
+    <div class="skill-group{{ if .learning }} skill-group-learning{{ end }}"><h3>{{ .title }}</h3><ul class="skill-chips">{{ range .items }}<li><span class="skill-chip-icon" aria-hidden="true">{{ partial "icon.html" .icon }}</span><span>{{ .name }}</span></li>{{ end }}</ul></div>
+    {{ end }}
+  </section>
+</section>
+{{ end }}

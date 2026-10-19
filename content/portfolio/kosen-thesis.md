@@ -1,7 +1,10 @@
 ---
 title: "10-30MHz帯の伝導EMIノイズに及ぼすNTC-THの影響検討"
+shortTitle: "伝導EMIノイズとNTC-TH"
 description: "10–30MHz帯の伝導EMIノイズとNTCサーミスタの関係を検討した、高専での卒業研究。"
 date: 2025-03-01
+showReadingTime: false
+showDate: true
 tags: ["Research"]
 ---
 
