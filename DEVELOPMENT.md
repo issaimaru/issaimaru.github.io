@@ -43,8 +43,7 @@ RSSや画像の取得が一時的に失敗した場合は、既存のキャッ�
 
 ```bash
 python3 -m unittest discover -s tests -v
-node --test tests/rocket-*.test.mjs
-node --test tests/particle-life*.test.mjs
+node --test tests/*.test.mjs
 hugo --minify --environment production
 ```
 
