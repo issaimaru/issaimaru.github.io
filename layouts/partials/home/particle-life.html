@@ -1,0 +1,34 @@
+{{ $worker := resources.Get "js/particle-life-worker.js" | js.Build (dict "target" "es2018" "minify" true) | resources.Fingerprint "sha512" }}
+<section id="particle-life" class="particle-life" data-particle-life data-state="loading" data-worker-src="{{ $worker.RelPermalink }}" aria-labelledby="pl-title">
+  <header class="pl-heading"><div><p class="section-kicker">LITTLE RULES, LIVING WORLDS</p><h2 id="pl-title">PARTICLE LIFE<span aria-hidden="true">.</span></h2><p>ただの粒が、生きものみたいに。<br>引き合って、離れて、まだ見たことのない形へ。</p></div><span class="pl-heading-mark" aria-hidden="true">{{ range slice "#ff719b" "#ffbd72" "#dce96c" "#82e8a9" "#6bd9ed" "#a69aff" }}<i style="--pl-color: {{ . }}"></i>{{ end }}</span></header>
+  <div class="pl-panel" data-pl-panel>
+    <div class="pl-toolbar"><div class="pl-world-label"><i class="pl-live" aria-hidden="true"></i><span>WORLD</span><b data-pl-world-id>——————</b><span data-pl-generation>GEN 01</span></div><div class="pl-toolbar-actions"><button type="button" data-pl-pause disabled aria-pressed="false">Ⅱ 一時停止</button><button type="button" data-pl-fullscreen disabled>全画面 ↗</button></div></div>
+    <div class="pl-stage" data-pl-stage tabindex="0" role="group" aria-label="Particle Lifeの粒子シミュレーション" aria-describedby="pl-help">
+      <canvas class="pl-canvas" data-pl-canvas aria-hidden="true"></canvas>
+      <div class="pl-scene-caption"><span>AN EMERGENT LITTLE UNIVERSE</span><small data-pl-scene-help>ドラッグして、この世界に触れてみよう。</small></div>
+      <div class="pl-loading" data-pl-loading><span aria-hidden="true">✦</span><p data-pl-loading-message>小さな世界を準備しています。</p><button type="button" data-pl-retry hidden>もう一度読み込む</button></div>
+      <div class="pl-cursor" data-pl-cursor hidden aria-hidden="true"></div>
+      <div class="pl-record-badge" data-pl-record-badge hidden><i aria-hidden="true"></i>REC <span data-pl-record-remaining>10s</span></div>
+      <div class="pl-scene-footer"><div class="pl-palette" data-pl-palette aria-hidden="true"></div><p><b data-pl-population>—</b> PARTICLES <span aria-hidden="true">/</span> <span data-pl-fps>— FPS</span><br><span data-pl-countdown>次の変異 30s</span></p></div>
+    </div>
+    <fieldset class="pl-controls" data-pl-controls disabled>
+      <legend class="sr-only">粒子シミュレーションの設定</legend>
+      <div class="pl-actions"><div class="pl-main-actions"><button class="pl-new-world" type="button" data-pl-new><span aria-hidden="true">↗</span> 新しい世界</button><button type="button" data-pl-mutate><span aria-hidden="true">✦</span> 突然変異</button><button type="button" data-pl-scatter><span aria-hidden="true">↻</span> かき混ぜる</button></div><label class="pl-auto"><input type="checkbox" data-pl-auto checked>30秒ごとに突然変異</label></div>
+      <div class="pl-settings">
+        <label class="pl-setting"><span>生態系のプリセット</span><select data-pl-preset><option value="soup">生命のスープ</option><option value="cells">細胞</option><option value="chase">追いかけっこ</option><option value="symbiosis">共生</option><option value="nebula">星雲</option></select></label>
+        <label class="pl-setting"><span>粒子の数</span><select data-pl-count><option value="600">600</option><option value="1000">1,000</option><option value="2000" selected>2,000</option><option value="3000">3,000</option><option value="4000">4,000</option></select></label>
+        <label class="pl-setting"><span>色の数</span><select data-pl-species><option value="3">3色</option><option value="4">4色</option><option value="6" selected>6色</option><option value="8">8色</option></select></label>
+        <div class="pl-setting"><label for="pl-speed">動く速さ<output for="pl-speed" data-pl-speed-output>1.0×</output></label><input id="pl-speed" type="range" min="0.25" max="2" step="0.25" value="1" data-pl-speed></div>
+        <div class="pl-setting"><label for="pl-radius">影響する距離<output for="pl-radius" data-pl-radius-output>11.5%</output></label><input id="pl-radius" type="range" min="5" max="22" step="0.5" value="11.5" data-pl-radius></div>
+      </div>
+      <div class="pl-interaction-bar"><div class="pl-tools" role="group" aria-label="ドラッグ時の操作"><span>触れ方</span><button type="button" data-pl-tool="attract" aria-pressed="true">引き寄せる</button><button type="button" data-pl-tool="repel" aria-pressed="false">はじく</button><button type="button" data-pl-tool="swirl" aria-pressed="false">渦をつくる</button></div><label class="pl-auto"><input type="checkbox" data-pl-trails checked>軌跡を残す</label></div>
+      <details class="pl-rules"><summary><span>粒子のルールを編集</span><small>色どうしの引力・反発</small></summary><div class="pl-rules-body"><table class="pl-matrix" data-pl-matrix aria-label="行の色が列の色から受ける力"></table><div class="pl-rule-editor"><p>小さなルールが、世界を変える。</p><label for="pl-rule-value"><span data-pl-rule-label>桃 → 桃</span><output for="pl-rule-value" data-pl-rule-output>+0.00</output></label><input id="pl-rule-value" data-pl-rule-value type="range" min="-1" max="1" step="0.05" value="0"><div class="pl-rule-scale"><span>−1 反発</span><span>0</span><span>引力 +1</span></div><p>マスを選んで、色どうしの力を調整。<br>「桃 → 緑」と「緑 → 桃」が違うと、追いかけ合うような動きも生まれます。</p></div></div></details>
+      <div class="pl-share-bar"><div><strong>この世界の、いまを切り取る。</strong><p data-pl-record-note role="status" aria-live="polite">10秒の動画にして、Xでシェアできます。</p></div><button type="button" data-pl-record><span aria-hidden="true">●</span> 10秒の動画を撮る</button></div>
+      <div class="pl-record-output" data-pl-record-output hidden><video data-pl-record-preview controls playsinline preload="metadata" aria-label="録画したParticle Lifeの動画"></video><div><p data-pl-post-help>① 動画を保存 → ② Xで動画を添付</p><div class="pl-video-actions"><a data-pl-download download>動画を保存 ↓</a><a data-pl-post href="https://twitter.com/intent/tweet" target="_blank" rel="noopener noreferrer">Xの投稿画面を開く ↗</a><button type="button" data-pl-native-share hidden>動画をアプリへ共有 ↗</button></div><small>投稿文は用意してあります。Xで動画を添付してから投稿してください。</small></div></div>
+    </fieldset>
+  </div>
+  <div class="pl-credit"><p id="pl-help">ドラッグで干渉 / 右クリックで反発 / <kbd>Space</kbd> 一時停止</p><p class="pl-status" data-pl-status role="status" aria-live="polite"></p></div>
+  <noscript><p>粒子のシミュレーションにはJavaScriptを有効にしてください。</p></noscript>
+</section>
+{{ $simulation := resources.Get "js/particle-life.js" | js.Build (dict "target" "es2018" "minify" true) | resources.Fingerprint "sha512" }}
+<script defer src="{{ $simulation.RelPermalink }}" integrity="{{ $simulation.Data.Integrity }}"></script>

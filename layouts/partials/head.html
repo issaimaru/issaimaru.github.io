@@ -52,6 +52,14 @@
   "sha512" }}
   <link type="text/css" rel="stylesheet" href="{{ $bundleCSS.RelPermalink }}"
     integrity="{{ $bundleCSS.Data.Integrity }}" />
+  {{ if .IsHome }}
+  {{ $particleCSS := resources.Get "css/particle-life.css" | resources.Minify | resources.Fingerprint "sha512" }}
+  <link type="text/css" rel="stylesheet" href="{{ $particleCSS.RelPermalink }}"
+    integrity="{{ $particleCSS.Data.Integrity }}" />
+  {{ $rocketCSS := resources.Get "css/rocket-game.css" | resources.Minify | resources.Fingerprint "sha512" }}
+  <link type="text/css" rel="stylesheet" href="{{ $rocketCSS.RelPermalink }}"
+    integrity="{{ $rocketCSS.Data.Integrity }}" />
+  {{ end }}
   {{ $jsAppearance := resources.Get "js/appearance.js" }}
   {{ $jsAppearance = $jsAppearance | resources.ExecuteAsTemplate "js/appearance.js" . | resources.Minify | resources.Fingerprint "sha512" }}
   <script type="text/javascript" src="{{ $jsAppearance.RelPermalink }}"

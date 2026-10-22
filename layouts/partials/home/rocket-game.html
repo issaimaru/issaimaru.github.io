@@ -1,0 +1,41 @@
+{{ $scene := resources.Get "js/rocket-scene.js" | js.Build (dict "target" "es2018" "format" "esm" "minify" true) | resources.Fingerprint "sha512" }}
+<section id="pit-stop" class="rocket-game" data-rocket-game data-state="loading" data-scene-src="{{ $scene.RelPermalink }}" aria-labelledby="rocket-title">
+  <header class="rocket-heading">
+    <div><p class="section-kicker">A SMALL ESCAPE FROM EARTH</p><h2 id="rocket-title">ROCKET CLUB<span aria-hidden="true">.</span></h2><p>もっと遠くへ。それとも、そっと着陸。<br class="rocket-mobile-break">小さなロケットで、月面から寄り道を。</p></div>
+    <span class="rocket-heading-tag"><i></i> TWO WAYS TO FLY</span>
+  </header>
+  <div class="rocket-console">
+    <div class="rocket-mode-switch" role="group" aria-label="ゲームモード"><button type="button" data-rocket-mode="ascent" aria-pressed="true"><span>01</span> 飛距離チャレンジ <small>HOW HIGH CAN YOU GO?</small></button><button type="button" data-rocket-mode="landing" aria-pressed="false"><span>02</span> 着陸ミッション <small>SOFT LANDING</small></button></div>
+    <div class="rocket-toolbar"><div class="rocket-mission"><span data-rocket-mission-number>01 / 03</span><span data-rocket-mission-name>静かの海</span></div><div class="rocket-tools"><button type="button" data-rocket-sound aria-pressed="false" aria-label="ゲームの音をオンにする">音 OFF</button><button type="button" data-rocket-pause disabled aria-label="ゲームを一時停止">一時停止</button><button type="button" data-rocket-fullscreen aria-label="ゲームを全画面にする">全画面 ↗</button></div></div>
+    <div class="rocket-viewport" data-rocket-viewport tabindex="0" role="group" aria-label="3Dロケットゲーム" aria-describedby="rocket-instructions">
+      <canvas class="rocket-canvas" data-rocket-canvas aria-hidden="true"></canvas>
+      <div class="rocket-vignette" aria-hidden="true"></div>
+      <div class="rocket-telemetry" aria-label="飛行データ">
+        <div><span data-rocket-altitude-label>ALTITUDE <small>到達高度</small></span><p><b data-rocket-altitude>0.0</b><small>m</small></p><i><em data-rocket-altitude-bar></em></i></div>
+        <div data-rocket-descent-stat><span data-rocket-speed-label>ASCENT <small>上昇速度</small></span><p><b data-rocket-descent>0.0</b><small>m/s</small></p><i><em data-rocket-descent-bar></em></i></div>
+        <div><span>FUEL <small>燃料</small></span><p><b data-rocket-fuel>100</b><small>%</small></p><i><em data-rocket-fuel-bar></em></i></div>
+      </div>
+      <div class="rocket-flight-label" aria-hidden="true"><span class="rocket-live-dot"></span><span data-rocket-flight-label>FLIGHT SYSTEMS ONLINE</span></div>
+      <div class="rocket-heat" data-rocket-heat-panel><div><span>ENGINE HEAT</span><b data-rocket-heat>0%</b></div><i><em data-rocket-heat-bar></em></i><small data-rocket-hull>機体 ● ● ●</small></div>
+      <div class="rocket-guidance" data-rocket-guidance hidden><span data-rocket-guidance-text>短く噴射して、降下速度を調整</span></div>
+      <div class="rocket-radar" aria-label="目標との位置関係"><svg viewBox="0 0 100 100" role="img" aria-label="中央の円が目標、点がロケット"><circle class="rocket-radar-grid" cx="50" cy="50" r="44"/><circle class="rocket-radar-grid" cx="50" cy="50" r="28"/><path d="M6 50h88M50 6v88"/><circle class="rocket-radar-pad" data-rocket-radar-pad cx="50" cy="50" r="12"/><line class="rocket-radar-vector" data-rocket-radar-vector x1="50" y1="50" x2="50" y2="50"/><circle class="rocket-radar-dot" data-rocket-radar-dot cx="50" cy="50" r="3"/></svg><div><span data-rocket-radar-label>FUEL RADAR</span><b data-rocket-offset>次の燃料へ 55 m</b></div></div>
+      <div class="rocket-engine" aria-hidden="true"><span>MAIN ENGINE</span><div>{{ range seq 12 }}<i></i>{{ end }}</div><b data-rocket-engine-label>STANDBY</b></div>
+      <div class="rocket-overlay" data-rocket-overlay>
+        <div class="rocket-overlay-card"><p class="rocket-eyebrow" data-rocket-eyebrow>THE SKY IS NOT THE LIMIT.</p><h3 data-rocket-overlay-title>燃料の先に、<br>まだ見ぬ景色。</h3><p class="rocket-overlay-description" data-rocket-overlay-description>光る燃料を回収して、どこまでも。<br>隕石とエンジンの熱には、ご用心。</p><div class="rocket-result" data-rocket-result hidden></div><button class="rocket-primary" type="button" data-rocket-start disabled>フライトシステムを準備中…</button><button class="rocket-secondary" type="button" data-rocket-retry hidden>このミッションをやり直す</button><button class="rocket-secondary" type="button" data-rocket-copy hidden>記録をコピーして競う ↗</button><span class="rocket-overlay-note" data-rocket-overlay-note>最高到達高度で勝負 · 自己ベストを保存</span></div>
+      </div>
+      <div class="rocket-flash" data-rocket-flash aria-hidden="true"></div>
+    </div>
+    <div class="rocket-controls" id="rocket-instructions">
+      <div class="rocket-control-description"><strong data-rocket-control-title>飛ばせ。拾え。自己ベストの、その先へ。</strong><p><kbd>Space</kbd> <span data-rocket-thrust-help>噴射で上昇</span> <span>／</span> <kbd>W A S D</kbd> または矢印で移動 <span>／</span> <kbd>R</kbd> リトライ</p><small data-rocket-control-help>光の輪を通って燃料を回収。噴射を休むと冷却できます。隕石に3回ぶつかると終了。</small></div>
+      <div class="rocket-touch-controls" aria-label="タッチ・マウス操作">
+        <div class="rocket-dpad"><button type="button" data-rocket-control="up" aria-label="奥へ移動">↑</button><button type="button" data-rocket-control="left" aria-label="左へ移動">←</button><span aria-hidden="true">✦</span><button type="button" data-rocket-control="right" aria-label="右へ移動">→</button><button type="button" data-rocket-control="down" aria-label="手前へ移動">↓</button></div>
+        <button class="rocket-thrust" type="button" data-rocket-control="thrust"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3s6 6 6 11a6 6 0 0 1-12 0c0-2 1-4 3-6 0 4 2 4 2 4s2-3 1-9Z" fill="none" stroke="currentColor" stroke-width="1.5"/></svg><span>噴射<small>HOLD</small></span></button>
+      </div>
+    </div>
+    <footer class="rocket-footer"><div class="rocket-progress" data-rocket-progress aria-label="ミッションの進行状況" hidden>{{ range seq 3 }}<span data-rocket-step><i></i>0{{ . }}</span>{{ end }}</div><div class="rocket-flight-record" data-rocket-flight-record>FUEL <b data-rocket-pickups>0</b> <span>回収</span></div><p><span class="rocket-score-label" data-rocket-score-label>到達高度</span> <b data-rocket-score>0</b><span data-rocket-score-unit>m</span></p><p>自己ベスト <b data-rocket-best>—</b><span data-rocket-best-unit>m</span></p></footer>
+  </div>
+  <p class="rocket-status" data-rocket-status role="status" aria-live="polite">3Dシーンを準備しています。</p>
+  <noscript><p>このゲームを遊ぶにはJavaScriptを有効にしてください。</p></noscript>
+</section>
+{{ $game := resources.Get "js/rocket-game.js" | js.Build (dict "target" "es2018" "minify" true) | resources.Fingerprint "sha512" }}
+<script defer src="{{ $game.RelPermalink }}" integrity="{{ $game.Data.Integrity }}"></script>
